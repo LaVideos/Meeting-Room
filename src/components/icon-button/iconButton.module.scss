@@ -1,9 +1,9 @@
 .button {
+  padding: 2px;
   display: inline-flex;
   justify-content: center;
   align-items: center;
-
-  background-color: var(--primary-color);
+  background: var(--primary-color);
   box-shadow: var( --outset-box-shadow);
   //box-shadow: var( --iconBtn-shadow);
   border-radius: 5px;
@@ -11,33 +11,33 @@
   border: none;
   background-position: center;
   background-repeat: no-repeat;
-  &.settings {
-    background-image: url(./images/settings.png);
-  }
-  &.edit {
-    background-image: url(./images/edit.png);
-  }
-  &.delete {
-    background-image: url(./images/delete.png);
-  }
-  &.home {
-    background-image: url(./images/home.png);
-  }
-  &.close {
-    background-image: url(./images/close.png);
-  }
-  &.agenda {
-    background-image: url(./images/agenda.png);
-  }
-  &.rooms {
-    background-image: url(./images/rooms.png);
-  }
-  &.map {
-    background-image: url(./images//map.png);
-  }
-  &.calendar {
-    background-image: url(./images/calendar.png);
-  }
+  //&.settings {
+  //  background-image: url(./images/settings.png);
+  //}
+  //&.edit {
+  //  background-image: url(./images/edit.png);
+  //}
+  //&.delete {
+  //  //background-image: url(./images/delete.png);
+  //}
+  //&.home {
+  //  background-image: url(./images/home.png);
+  //}
+  //&.close {
+  //  background-image: url(./images/close.png);
+  //}
+  //&.agenda {
+  //  background-image: url(./images/agenda.png);
+  //}
+  //&.rooms {
+  //  background-image: url(./images/rooms.png);
+  //}
+  //&.map {
+  //  background-image: url(./images//map.png);
+  //}
+  //&.calendar {
+  //  background-image: url(./images/calendar.png);
+  //}
     &:active,
   &:focus-visible {
     box-shadow: var(--iconBtn-shadow-inset)
@@ -50,24 +50,61 @@
     width: 20px;
     height: 20px;
     background-size: 12px;
+    svg{
+      width: 12px;
+      height: 12px;
+      font-size: 10px;
+
+    }
   }
   &.medium {
     width: 30px;
     height: 30px;
-    background-size: 20px;
+    //background-size: 20px;
     border-radius: 9px;
+    svg{
+      width: 20px;
+      height: 20px;
+      font-size: 10px;
+
+    }
   }
   &.large {
     width: 40px;
     height: 40px;
-    background-size: 25px;
-    border-radius: 13px;
+    //background-size: 25px;
+    svg{
+      width: 30px;
+      height: 30px;
+      font-size: 10px;
+
+    }
   }
   &.margin {
     margin-left: 5px;
   }
   &:hover{
-    background-color: var(--primary-hover-color);
+    //background-color: var(--primary-hover-color);
+    svg{
+      fill: var(--accent-color);
+      color: var(--accent-color);
+    }
   }
+  &:active{
+    //background-color: var(--primary-hover-color);
+    box-shadow: var(--inset-input-shadow);
+    svg{
+      fill: var(--accent-color);
+      color: var(--accent-color);
+    }
+  }
+}
+
+.button svg{
+  //font-size: 10px;
+  //width: 15px;
+  //height: 15px;
+  fill: var(--colorIcon);
+  color: var(--colorIcon);
 }
 

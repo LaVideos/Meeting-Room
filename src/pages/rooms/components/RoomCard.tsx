@@ -7,6 +7,9 @@ import { useAppSelector, useAppDispatch } from "hooks/toolkitHooks";
 import { roomsActions } from "redux&saga/slices/rooms.slice";
 import { setRoomId, setFloor } from "redux&saga/slices/booking.slice";
 import Button from "components/button";
+import { SlNotebook } from "react-icons/sl";
+
+
 interface MyroomsData {
   data: rooms;
 }
@@ -190,10 +193,10 @@ const RoomCard = ({ data }: MyroomsData) => {
                 />
               </svg>
             </span>
-            <span className={styles.buttonReserve}>
-           
-              <Button onclick={() => {}}>reserve a room</Button>
-            </span>
+            <div className={styles.buttonReserve}>
+              <span className={styles.svgContainer}><SlNotebook/></span>
+              {/*<Button onclick={() => {}}>reserve a room</Button>*/}
+            </div>
             
           </div>
         </div>

@@ -299,7 +299,7 @@
 .reserveRoom {
   display: flex;
 }
-.svg {
+.svg,.svgContainer {
   width: 30px;
   padding: 4px;
   height: 30px;
@@ -310,6 +310,20 @@
     fill: var(--accent-color);
   }
 }
+
+.svgContainer{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  margin-bottom: 1px;
+}
+
+.svgContainer svg:hover{
+  color: var(--accent-color);
+}
+
+
 .devicesRoom {
   display: flex;
   gap: 10px;
@@ -404,6 +418,8 @@
 :global(.infinite-scroll-component__outerdiv) {
   margin-top: 0px;
 }
+
+
 .btn {
   position: absolute;
   bottom: 10px;

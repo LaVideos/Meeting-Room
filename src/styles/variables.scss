@@ -1,12 +1,13 @@
 :root {
   /* font colors */
+  --additionalColor: #5bbde0;
 
   --primary-text-color: #a0a5a8;
-  --accent-text-color: #25cee0;
+  --accent-text-color: var(--additionalColor);
   --dark-text-color: #555;
 
   /* components colors*/
-  --accent-color: #5bbde0;
+  --accent-color:  var(--additionalColor);
   --primary-color: #f4f6fa;
   --primary-color-opacity: rgba(244, 246, 250, 0.5);
   --primary-hover-color:#f8faff;
@@ -45,7 +46,6 @@
   --base3: rgba(0, 0, 0, 0.15);
   --base4: rgba(255, 255, 255, 0.1);
   --mainColorFont: #555;
-  --additionalColor: #5bbde0;
   --link: #aaa;
   --errorColor: #d55d5d;
   --additionalLighterColor: #b1dae7;
@@ -65,7 +65,7 @@
 
 
   //--label: #a0a5a8;
-  --label: #2a2a2a;
+  --label: #6b6b6b;
 
   --registration:#505050;
 
@@ -342,6 +342,7 @@
     --additionalLighterColor: #daad6d;
     --label: #a0a5a8;
     --colorIcon: #9d9d9d;
+    //--colorIcon: #b6b6b6;
     --gradientInputField: linear-gradient(
                     to right,
                     rgb(3, 14, 23, 0.001) 0%,
@@ -486,13 +487,13 @@
     //datePicker
     --PickerGlobalColor: #ffffff;
 
-    --dateAndTimePicker-selected-global:black;
+    --dateAndTimePicker-selected-global: #5e5e5e;
 
     --datePicker-box-shadow:-2px -2px 2px #3F4E5AFF,
     -2px -2px 2px #3D4C57FF, 2px 2px 2px #344049FF,
     inset 2px 2px 5px  #4C5D6BFF;
 
-    --dateAndTime-color: #e0d025;
+    --dateAndTime-color: var(--additionalColor);
 
 
     //colorSelrctor

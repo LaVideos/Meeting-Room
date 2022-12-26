@@ -81,7 +81,7 @@ export default React.memo(function Calendar({ data, calendarRef, weekends, loadi
         navLinks={true}
         eventDisplay='list-item'
         eventBorderColor='var(--accent-color)'
-        eventBackgroundColor='var(--accent-color)'
+        eventBackgroundColor='var(--colorNavTitle3_3)'
         eventOverlap={false}
         eventTimeFormat={{ hour: '2-digit', minute: '2-digit', meridiem: false }}
         allDaySlot={false}

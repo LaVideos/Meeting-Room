@@ -203,7 +203,7 @@ const CalendarPage = () => {
         height: '100%',
         m: '10px 15px 14px 10px',
         backgroundColor: 'var(--calendar-bg)',
-        boxShadow: 'var(--SCREENCALENDAR-box-shadow)',
+        boxShadow: 'var(--iconBtn-shadow)',
         borderRadius: '10px'
       }}>
         <Box
