@@ -14,6 +14,38 @@
   right: 10px;
 }
 
+:global(.css-169iwlq-MuiCalendarPicker-root .MuiFormHelperText-root.Mui-error){
+  color: var(--errorColor)!important;
+}
+
+:global(.css-169iwlq-MuiCalendarPicker-root .css-14s5rfu-MuiFormLabel-root-MuiInputLabel-root.Mui-error){
+  color: var(--errorColor)!important;
+}
+
+:global(.css-169iwlq-MuiCalendarPicker-root .css-1tkx1wf-MuiSvgIcon-root-MuiPickersCalendarHeader-switchViewIcon){
+  color: var(--colorIcon)!important;
+}
+
+:global(.css-169iwlq-MuiCalendarPicker-root .css-i4bv87-MuiSvgIcon-root){
+  color: var(--colorIcon)!important;
+}
+
+:global(.css-raiqh1-MuiTypography-root-MuiDayPicker-weekDayLabel){
+  color: var(--colorIcon)!important;
+}
+
+:global(.css-kk1bwy-MuiButtonBase-root-MuiMenuItem-root.Mui-selected){
+  background: var(--base3)!important;
+}
+
+:global(.css-iqd1hh-MuiButtonBase-root-MuiChip-root .MuiChip-deleteIcon){
+  color: var(--colorIcon)!important;
+}
+
+:global(.css-u791bf-MuiPickersArrowSwitcher-root-MuiClockPicker-arrowSwitcher .css-i4bv87-MuiSvgIcon-root){
+  color: var(--colorIcon)!important;
+}
+
 .goToCalendar {
   vertical-align: middle;
   font-size: 17px;

@@ -1,11 +1,23 @@
 :global(button.css-h2z9v1-MuiButtonBase-root-MuiIconButton-root-MuiClock-amButton),
 :global(button.css-rjqbug-MuiButtonBase-root-MuiIconButton-root-MuiClock-pmButton) {
   box-shadow: var(--datePicker-box-shadow) !important;
-  color: var(--accent-color);
+  color: var(--accent-color) !important;
   cursor: default;
   &:hover {
     background-color: transparent;
   }
+}
+
+:global(.css-1sumxir-MuiFormLabel-root-MuiInputLabel-root.Mui-focused){
+  color: var(--accent-color)!important;
+}
+
+:global(.css-hfutr2-MuiSvgIcon-root-MuiSelect-icon), :global(.css-bpeome-MuiSvgIcon-root-MuiSelect-icon){
+  color: var(--accent-color)!important;
+}
+
+:global(.css-hfutr2-MuiSvgIcon-root-MuiSelect-icon.Mui-disabled){
+  color: var(--registration)!important;
 }
 
 :global(button.css-zcgqxx-MuiButtonBase-root-MuiIconButton-root-MuiClock-pmButton),

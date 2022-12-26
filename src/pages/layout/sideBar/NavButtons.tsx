@@ -4,6 +4,11 @@ import cn from "classnames";
 import { useEffect, useState } from "react";
 import { useAppSelector, useAppDispatch } from "hooks/toolkitHooks";
 import { roomsActions } from "redux&saga/slices/rooms.slice";
+import { SlLocationPin,SlHome } from "react-icons/sl";
+import {BsCalendar4Week} from "react-icons/bs";
+
+
+
 const NavButtons = () => {
   const dispatch = useAppDispatch();
   const { location } = useAppSelector((state) => state.rooms);
@@ -21,7 +26,7 @@ const NavButtons = () => {
           location == "/rooms" && styles.current,
           styles.rooms
         )}
-      ></Link>
+      > <SlHome/> </Link>
       <Link
         to="/calendar"
         onClick={() => setLocation("/calendar")}
@@ -30,7 +35,7 @@ const NavButtons = () => {
           location == "/calendar" && styles.current,
           styles.calendar
         )}
-      ></Link>
+      ><BsCalendar4Week/></Link>
       <Link
         to="/map"
         onClick={() => setLocation("/map")}
@@ -39,7 +44,7 @@ const NavButtons = () => {
           location == "/map" && styles.current,
           styles.map
         )}
-      ></Link>
+      ><SlLocationPin/></Link>
     </div>
   );
 };

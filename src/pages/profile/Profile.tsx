@@ -1,9 +1,13 @@
-import { Box } from '@mui/material';
-import { ChangePasswordComponent } from 'components';
-import { useLocation, useNavigate } from 'react-router-dom';
+import {ChangePasswordComponent} from 'components';
+import {useLocation, useNavigate} from 'react-router-dom';
 import KeyboardBackspaceIcon from '@mui/icons-material/KeyboardBackspace';
 import Typography from '@mui/material/Typography'
 import ProfileForm from 'components/profile-form';
+
+import classNames from 'classnames/bind';
+import styles from './Profile.module.scss'
+
+const cn = classNames.bind(styles)
 
 const Profile = () => {
   const navigate = useNavigate()
@@ -22,24 +26,16 @@ const Profile = () => {
   }
 
   return (
-    <Box sx={{ height: '100%',paddingBottom:'40px' }}>
-      <Box sx={{ display: 'flex', ml: '80px', pt: '40px' }}>
-        <Box sx={{ cursor: 'pointer', display: 'flex', alignItems: 'center' }}>
-          {from && <KeyboardBackspaceIcon fontSize='large' sx={{ color: 'var(--accent-text-color)' }} />}
-          <Typography
-            component='span'
-            variant='h4'
-            onClick={goBack}
-            sx={{ color: 'var(--accent-text-color)' }}
-          >  {from && `Go back ${checkPath(from)}`}
-          </Typography>
-        </Box>
-      </Box>
-      <Box sx={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'center',  flexDirection:"column"}}>
-          <ProfileForm/>
-          <ChangePasswordComponent/>
-      </Box>
-    </Box>
+      <div className={cn('profile-container')}>
+          <div className={cn('go-back-container')}>{from && <KeyboardBackspaceIcon fontSize='large' sx={{color: 'var(--accent-text-color)',fontSize:'50px'}}/>}
+              <div
+                  className={cn('text')}
+                  onClick={goBack}
+              >  {from && `Go back ${checkPath(from)}`}
+              </div></div>
+          <div className={cn('profile-data-container')}><ProfileForm/>
+              <ChangePasswordComponent/></div>
+</div>
   )
 }
 

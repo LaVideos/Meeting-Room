@@ -6,8 +6,10 @@
   margin-top: 10px;
   margin-right: 10px;
   height: 60px;
+  z-index: 11100;
+  position: relative;
 
-  background-color:var(--primary-color);
+  background-color:var(--base1);
   box-shadow: var(--outset-box-shadow);
 }
 
@@ -35,29 +37,49 @@
   border-radius: 10px;
   box-shadow: var( --link-NavBtn-box-shadow);
   background-size: 22px;
-  background-repeat: no-repeat;
-  background-position: center;
+
+  transition: 500ms;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  //background-repeat: no-repeat;
+  //background-position: center;
   &.current {
-    box-shadow:var(--inset-input-shadow)
-  }
-  &.map {
-    background-image: url(./images/location.png);
-    &.current,
-    &:hover {
-      background-image: url(./images/locationCurrent.png);
+    box-shadow:var(--inset-input-shadow);
+    svg{
+      color: var(--accent-color);
     }
   }
-  &.rooms {
-    background-image: url(./images/home.png);
-    &.current,    &:hover  {
-      background-image: url(./images/homeCurrent.png);
-    }
-  }
-  &.calendar {
-    background-image: url(./images/calendar.png);
-    &.current,
-    &:hover {
-      background-image: url(./images/calendarCurrent.png);
-    }
-  }
+  //&.map {
+  //  background-image: url(./images/location.png);
+  //  &.current,
+  //  &:hover {
+  //    background-image: url(./images/locationCurrent.png);
+  //  }
+  //}
+  //&.rooms {
+  //  background-image: url(./images/home.png);
+  //  &.current,    &:hover  {
+  //    background-image: url(./images/homeCurrent.png);
+  //  }
+  //}
+  //&.calendar {
+  //  background-image: url(./images/calendar.png);
+  //  &.current,
+  //  &:hover {
+  //    background-image: url(./images/calendarCurrent.png);
+  //  }
+  //}
 }
+
+.link svg{
+  font-size: 22px;
+  color: var(--colorIcon);
+}
+
+.link svg:hover{
+  color: var(--accent-color);
+}
+

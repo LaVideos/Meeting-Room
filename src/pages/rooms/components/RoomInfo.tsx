@@ -14,7 +14,7 @@ const RoomInfo = ({ openInfo, setOpenInfo, setOpen }) => {
   const length = roomInfo.length;
   const roomSoonestBookingsDays = length != 0 ? roomInfo[0].bookings : [];
   return (
-    <span
+    <div
       data-testid="info-box"
       data-info={openInfo}
       className={styles.infoBox}
@@ -68,7 +68,7 @@ const RoomInfo = ({ openInfo, setOpenInfo, setOpen }) => {
           </div>
         </InfiniteScroll>
       </span>
-    </span>
+    </div>
   );
 };
 export default RoomInfo;

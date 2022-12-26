@@ -1,4 +1,9 @@
 @import './variables.scss';
+body::-webkit-scrollbar {
+  width: 0;
+  background: transparent;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -11,6 +16,40 @@ body {
   -moz-user-select: none;
   -webkit-user-select: none;
   user-select: none;
+
+
+
+
+
+  ::-webkit-scrollbar {
+    width: 10px;
+    background: var(--base1);
+    border-radius: 10px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: var(--base3);
+    border-radius: 10px;
+
+    &:hover {
+      background: var(--base4);
+    }
+
+    &:active {
+      background: var(--accent-text-color);
+    }
+
+  }
+
+  ::-webkit-scrollbar-corner {
+    background: var(--base3);
+  }
+
+  ::-webkit-resizer  {
+    background: var(--base3);
+  }
+
+
 }
 
 code {
