@@ -2,7 +2,7 @@
   "name": "my-app",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://LaVideos.github.io/Meeting-Room/auth/login",
+  "homepage": "http://LaVideos.github.io/Meeting-Room/",
   "dependencies": {
     "@emotion/react": "^11.10.4",
     "@emotion/styled": "^11.10.4",
@@ -71,7 +71,7 @@
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook -o docs-build -s public",
-    "deploy": "gh-pages -d build",
+     "deploy": "gh-pages -b develop -d build",
     "predeploy": "npm run build"
   },
   "eslintConfig": {
