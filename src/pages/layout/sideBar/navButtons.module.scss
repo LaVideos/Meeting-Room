@@ -1,6 +1,6 @@
 .navButton {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
   border-radius: 10px;
   margin-top: 10px;
@@ -13,23 +13,24 @@
   box-shadow: var(--outset-box-shadow);
 }
 
-.link {
-  // width: 30px;
-  // height: 30px;
+.nav{
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
 
-  // color: var(--primary-text-color);
-  // text-align: center;
-  // font-size: 15px;
+.nav a[class='active']{
+  box-shadow:var(--inset-input-shadow);
+  svg{
+    color: var(--accent-color);
+  }
+}
 
-  // border-radius: 100%;
-  // box-shadow: -2px -2px 4px rgba(255, 255, 255, 0.8),
-  //   -2px -2px 4px rgba(255, 255, 255, 0.625), 2px 2px 2px rgba(0, 0, 0, 0.15),
-  //   inset 2px 2px 4px rgba(255, 255, 255, 0.1);
-  // background-size: 15px;
-  // background-repeat: no-repeat;
-  // background-position: center;
+.link-box a {
 
-  width: 45px;
+  transition: 500ms ease-in-out;
+   width: 45px;
   height: 45px;
   color: var(--primary-text-color);
   text-align: center;
@@ -38,48 +39,28 @@
   box-shadow: var( --link-NavBtn-box-shadow);
   background-size: 22px;
 
-  transition: 500ms;
-
   display: flex;
   align-items: center;
   justify-content: center;
 
-  //background-repeat: no-repeat;
-  //background-position: center;
-  &.current {
-    box-shadow:var(--inset-input-shadow);
-    svg{
-      color: var(--accent-color);
-    }
-  }
-  //&.map {
-  //  background-image: url(./images/location.png);
-  //  &.current,
-  //  &:hover {
-  //    background-image: url(./images/locationCurrent.png);
+  margin-right: 10px;
+
+  //&.current {
+  //  box-shadow:var(--inset-input-shadow);
+  //  svg{
+  //    color: var(--accent-color);
   //  }
   //}
-  //&.rooms {
-  //  background-image: url(./images/home.png);
-  //  &.current,    &:hover  {
-  //    background-image: url(./images/homeCurrent.png);
-  //  }
-  //}
-  //&.calendar {
-  //  background-image: url(./images/calendar.png);
-  //  &.current,
-  //  &:hover {
-  //    background-image: url(./images/calendarCurrent.png);
-  //  }
-  //}
+
 }
 
-.link svg{
+.link-box svg{
   font-size: 22px;
   color: var(--colorIcon);
+  transition: 500ms;
 }
 
-.link svg:hover{
+.link-box svg:hover{
   color: var(--accent-color);
 }
 
