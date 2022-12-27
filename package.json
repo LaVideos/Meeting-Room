@@ -2,7 +2,7 @@
   "name": "my-app",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://LaVideos.github.io/auth/login",
+  "homepage": "http://LaVideos.github.io/Meeting-Room/auth/login",
   "dependencies": {
     "@emotion/react": "^11.10.4",
     "@emotion/styled": "^11.10.4",
