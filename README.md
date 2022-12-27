@@ -4,6 +4,27 @@
 [![TS][ts]][ts-url]
 [![MUI][mui]][mui-url]
 
+## 💡️ Start use resource
+
+1 Turn on cors 
+
+if not, access will be denied
+
+```sh
+ https://cors-anywhere.herokuapp.com/corsdemo
+```
+
+2 Login
+
+```sh
+admin account - 
+       📧 email : admin1@incorainc.com
+       🔑 password : 1234
+user account - 
+       📧 email : newUser@incorainc.com 
+       🔑 password : 1q2w3e4r5tQ!
+```
+
 ## ⚡️ Quick start
 
 #### Node version `v14.18.1`
