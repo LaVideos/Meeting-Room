@@ -52,10 +52,10 @@
   border-radius: 50% !important;
 }
 :global(label.css-1sumxir-MuiFormLabel-root-MuiInputLabel-root) {
-  font-size: 20px;
-  top: -11px;
-  left: 9px;
-  color: var(--label);
+  font-size: 20px!important;
+  top: -11px!important;
+  left: 9px!important;
+  color: var(--label)!important;
 }
 
 :global(.css-1yllih9-MuiPaper-root-MuiPickersPopper-paper) {
