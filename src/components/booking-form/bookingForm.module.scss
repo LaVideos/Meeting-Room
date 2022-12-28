@@ -103,8 +103,16 @@ border-radius: 25px;
 }
 
 :global(.css-yylhor){
-  color: var(--label);
+  color: var(--label)!important;
 }
+
+:global(.css-1yhq19e){
+  color: var(--label)!important;
+}
+
+//:global(.css-u9osun){
+//  color: var(--label)!important;
+//}
 
 :global(.css-u9osun.Mui-focused){
   color: var(--additionalColor)!important;
@@ -112,8 +120,17 @@ border-radius: 25px;
   top:-10px!important;
 }
 
+:global(.css-u9osun){
+  color: var(--additionalColor)!important;
+  font-size: 20px!important;
+  top:-10px!important;
+}
+
+
 :global(.css-p0rm37){
-  color: var(--label)!important;
+  color: var(--additionalColor)!important;
+  font-size: 20px!important;
+  top:-10px!important;
 }
 
 
@@ -133,7 +150,15 @@ border-radius: 25px;
   color: var(--label)!important;
 }
 
+:global(.css-hfutr2){
+  color: var(--label)!important;
+}
+
 :global(.css-bpeome-MuiSvgIcon-root-MuiSelect-icon){
+  color: var(--label)!important;
+}
+
+:global(.css-bpeome){
   color: var(--label)!important;
 }
 
@@ -160,13 +185,28 @@ border-radius: 25px;
   color: var(--label) !important;
 }
 
+:global(.css-118r9cm){
+  color: var(--label) !important;
+}
+
 :global(.css-gqbi0y-PrivatePickersYear-root){
   display: flex!important;
   justify-content: center!important;
   align-items: center!important;
 }
 
+:global(.css-gqbi0y){
+  display: flex!important;
+  justify-content: center!important;
+  align-items: center!important;
+}
+
 :global(.css-x15yrh-MuiPopper-root-MuiPickersPopper-root .PrivatePickersYear-yearButton){
+  text-align: center!important;
+  color: var(--label);
+}
+
+:global(.css-x15yrh){
   text-align: center!important;
   color: var(--label);
 }
@@ -183,7 +223,15 @@ border-radius: 25px;
   color: var(--errorColor)!important;
 }
 
+:global(.css-169iwlq){
+  color: var(--errorColor)!important;
+}
+
 :global(.css-169iwlq-MuiCalendarPicker-root .css-14s5rfu-MuiFormLabel-root-MuiInputLabel-root.Mui-error){
+  color: var(--errorColor)!important;
+}
+
+:global(.css-169iwlq .css-14s5rfu){
   color: var(--errorColor)!important;
 }
 
@@ -191,7 +239,15 @@ border-radius: 25px;
   color: var(--colorIcon)!important;
 }
 
+:global(.css-169iwlq .css-1tkx1wf){
+  color: var(--colorIcon)!important;
+}
+
 :global(.css-169iwlq-MuiCalendarPicker-root .css-i4bv87-MuiSvgIcon-root){
+  color: var(--colorIcon)!important;
+}
+
+:global(.css-i4bv87){
   color: var(--colorIcon)!important;
 }
 
@@ -199,7 +255,15 @@ border-radius: 25px;
   color: var(--colorIcon)!important;
 }
 
+:global(.css-raiqh1){
+  color: var(--colorIcon)!important;
+}
+
 :global(.css-kk1bwy-MuiButtonBase-root-MuiMenuItem-root.Mui-selected){
+  background: var(--base3)!important;
+}
+
+:global(.css-kk1bwy){
   background: var(--base3)!important;
 }
 
@@ -207,7 +271,15 @@ border-radius: 25px;
   color: var(--colorIcon)!important;
 }
 
+:global(.css-iqd1hh .MuiChip-deleteIcon){
+  color: var(--colorIcon)!important;
+}
+
 :global(.css-u791bf-MuiPickersArrowSwitcher-root-MuiClockPicker-arrowSwitcher .css-i4bv87-MuiSvgIcon-root){
+  color: var(--colorIcon)!important;
+}
+
+:global(.css-u791bf .css-i4bv87){
   color: var(--colorIcon)!important;
 }
 
@@ -234,6 +306,11 @@ border-radius: 25px;
   box-shadow: var(--inset-input-shadow);
 }
 :global(label.css-14s5rfu-MuiFormLabel-root-MuiInputLabel-root) {
+  left: 10px;
+  color: var(--mainColorFont);
+}
+
+:global(label.css-14s5rfu) {
   left: 10px;
   color: var(--mainColorFont);
 }
