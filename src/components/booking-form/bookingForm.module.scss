@@ -80,6 +80,43 @@ border-radius: 25px;
     color: var(--errorColor) !important;
 }
 
+:global(.css-p0rm37.Mui-error){
+    color: var(--errorColor) !important;
+}
+
+:global(.css-u9osun.Mui-error){
+  color: var(--additionalColor)!important;
+  font-size: 20px!important;
+  top:-10px!important;
+}
+
+:global(.css-1636szt){
+  color: var(--label)!important;
+}
+
+:global(.css-1636szt){
+  color: var(--label)!important;
+}
+
+:global(.css-sldnni){
+  color: var(--label)!important;
+}
+
+:global(.css-yylhor){
+  color: var(--label);
+}
+
+:global(.css-u9osun.Mui-focused){
+  color: var(--additionalColor)!important;
+  font-size: 20px!important;
+  top:-10px!important;
+}
+
+:global(.css-p0rm37){
+  color: var(--label)!important;
+}
+
+
 :global(.css-1sumxir-MuiFormLabel-root-MuiInputLabel-root.Mui-focused){
   color: var(--additionalColor)!important;
   font-size: 20px!important;
