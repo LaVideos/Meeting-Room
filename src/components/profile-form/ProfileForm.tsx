@@ -1,21 +1,23 @@
-import TextField from '@mui/material/TextField';
-import { Box } from '@mui/material';
-import { useState } from 'react'
+import {Box} from '@mui/material';
+import React, {useState} from 'react'
 import classNames from 'classnames/bind';
 import styles from './profileForm.module.scss'
 import Avatar from './avatar/Avatar';
 import Button from 'components/button';
-import { useForm } from "react-hook-form";
+import {useForm} from "react-hook-form";
 import CheckboxWithLabel from 'components/checkbox-with-label';
 import {
-    getFromLocalStorage, getUserData,
+    getFromLocalStorage,
+    getUserData,
     removeFromLocalStorage,
     setToLocalStorage
 } from 'services/local-storage.service';
-import { Errors } from 'constants/errors';
 import Typography from '@mui/material/Typography'
-import { useNavigate } from 'react-router-dom';
+import {useNavigate} from 'react-router-dom';
 import Toggle from "../toggle/Toggle";
+import InputRe from 'components/input/InputRe';
+import {yupResolver} from "@hookform/resolvers/yup/dist/yup";
+import {ChangeLoginSchema} from "../../utils/yup.validation";
 
 const cn = classNames.bind(styles);
 interface FormValues {
@@ -30,6 +32,9 @@ const ProfileForm = () => {
     const [imageUrl, setImageUrl] = useState<string | null>(null);
     const [selectedImage, setSelectedImage] = useState<File | null>(null);
     const navigate = useNavigate()
+
+
+
 
     const handleWeekendsToggle = () => {
         setWeekends(prev => !prev)
@@ -54,9 +59,12 @@ const ProfileForm = () => {
         register,
         handleSubmit,
         formState: { errors, isDirty, isValid }
-    } = useForm<FormValues>({ mode: 'onBlur' });
+    } = useForm({ mode: 'all',
+        resolver: yupResolver(ChangeLoginSchema)
+    });
 
     const submit = (data: any) => {
+        console.log(data)
         reset()
     }
 
@@ -67,28 +75,29 @@ const ProfileForm = () => {
 
     const user = { firstName: firstName, lastName: lastName }
 
-    const inputUserName = userName.map((name: FormName) => (
-        <TextField
-            key={name}
-            sx={{ mr: '10px', width: '290px' }}
-            defaultValue={user[name] || ''}
-            label={name === 'firstName' ? 'First name' : 'Last name'}
-            error={Boolean(errors[name])}
-            data-testid={name}
-            helperText={errors[name] ? errors[name]?.message : ''}
-            {...register(name, {
-                required: Errors.userLength,
-                maxLength: {
-                    value: 25,
-                    message: Errors.userLength
-                },
-                minLength: {
-                    value: 2,
-                    message: Errors.userLength
-                }
-            })}
-        />
-    ))
+    // const inputUserName =
+        // userName.map((name: FormName) => (
+        // <TextField
+        //     key={name}
+        //     sx={{ mr: '10px', width: '290px' }}
+        //     defaultValue={user[name] || ''}
+        //     label={name === 'firstName' ? 'First name' : 'Last name'}
+        //     error={Boolean(errors[name])}
+        //     data-testid={name}
+        //     helperText={errors[name] ? errors[name]?.message : ''}
+        //     {...register(name, {
+        //         required: Errors.userLength,
+        //         maxLength: {
+        //             value: 25,
+        //             message: Errors.userLength
+        //         },
+        //         minLength: {
+        //             value: 2,
+        //             message: Errors.userLength
+        //         }
+        //     })}
+        // />
+    // ))
 
     return (
         <Box className={cn('ProfileContainer')}>
@@ -118,9 +127,20 @@ const ProfileForm = () => {
                 autoComplete="off"
                 onSubmit={handleSubmit(submit)}
             >
-                <Box sx={{ mb: '20px', height: '80px' }}>
-                    {inputUserName}
-                </Box>
+                <div className={cn('input-container')} >
+                    <InputRe
+                        isValid={true}
+                        error={errors.login}
+                        type={"login"}
+                        register={register}
+                        name={'login'}
+                        placeHolder={'Name and surname'}
+                        required={true}
+                        placeholderDisappear={user.firstName+' '+user.lastName}
+                        size={"small"}
+                        defaultValue={user.firstName+' '+user.lastName}
+                    />
+                </div>
                 <Box sx={{ display: 'flex', justifyContent: 'center' }}>
                     <Button
                         disabled={!isDirty || !isValid}

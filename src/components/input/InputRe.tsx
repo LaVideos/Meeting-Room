@@ -19,6 +19,7 @@ interface IInput {
     isValid: boolean,
     name: string;
     required: boolean,
+    defaultValue?:string
 
     error?: FieldError | Merge<FieldError, FieldErrorsImpl<any>> | undefined,
     register?: UseFormRegister<FieldValues> | any,
@@ -27,7 +28,7 @@ interface IInput {
 }
 
 const InputRe =
-    ({type, placeHolder, name, required, isValid, error, register, placeholderDisappear, size}
+    ({type, placeHolder, name, required, isValid, error, register, placeholderDisappear, size,defaultValue}
          : IInput) => {
 
         const [eyeState, setEyeState] = useState(true);
@@ -47,10 +48,10 @@ const InputRe =
                            {...register(`${name}`, {
                                required: required,
                            })}
-                           // autoComplete={"off"}
                            placeholder={placeholderDisappear}
                            required
                            id={`${name}-input`}
+                           defaultValue={defaultValue?defaultValue:''}
                     />
                     <label htmlFor={`${name}-input`}>{placeHolder}</label>
                     {name && (name.includes("password")||name.includes('Password')) &&

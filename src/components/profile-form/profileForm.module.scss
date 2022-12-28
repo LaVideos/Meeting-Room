@@ -8,10 +8,17 @@
   border-radius: 40px;
   margin: 40px;
   background-color: var(--base1);
+  width: 640px;
 }
 .form {
   padding-bottom: 20px;
   border-bottom: 3px var(--accent-text-color) solid;
+}
+
+.input-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .profile{

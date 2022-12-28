@@ -26,7 +26,7 @@ const DateAndTimePicker: React.FC<DateAndTimePickerProps> = ({ date, label = '',
         onChange={onChange}
         minDateTime={minDate ? dayjs(minDate) : undefined}
         minutesStep={15}
-        PopperProps={{ sx: popperSx, placement: "top-start", }}
+        PopperProps={{ sx: popperSx, placement: "top-start",color:'var(--additionalColor)'}}
         renderInput={(params) => (
           <TextField
             {...params}

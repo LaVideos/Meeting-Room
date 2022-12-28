@@ -18,6 +18,13 @@ export const RegisterSchema = yup.object().shape({
 
 });
 
+export const ChangeLoginSchema = yup.object().shape({
+    login: yup.string().required("")
+        .matches(regex.twoWordsBySpaceAndNumbers,
+            validErrorsMsg.loginErrorMsg),
+
+});
+
 export const ChangePasswordSchema = yup.object().shape({
     newPassword: yup.string()
         .required("")

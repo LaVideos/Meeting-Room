@@ -158,8 +158,33 @@ flex-wrap: wrap;
 
 }
 
-:global(.fc .fc-scroller ){
+:global(.css-14s5rfu-MuiFormLabel-root-MuiInputLabel-root.Mui-error){
+  color: var(--errorColor)!important;
 
+}
+
+:global(.MuiFormHelperText-root.Mui-error){
+color: var(--errorColor)!important;
+}
+
+:global(.css-1sumxir-MuiFormLabel-root-MuiInputLabel-root.Mui-focused){
+  color: var(--additionalColor)!important;
+  font-size: 20px!important;
+  top:-10px!important;
+}
+
+:global(.css-1sumxir-MuiFormLabel-root-MuiInputLabel-root){
+  color: var(--label) !important;
+  top:-10px!important;
+  font-size: 20px!important;
+}
+
+:global(.css-hfutr2-MuiSvgIcon-root-MuiSelect-icon){
+  color: var(--label)!important;
+}
+
+:global(.css-bpeome-MuiSvgIcon-root-MuiSelect-icon){
+  color: var(--label)!important;
 }
 
 :global(.fc-timegrid-event .fc-event-time ){

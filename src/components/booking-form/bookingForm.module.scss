@@ -14,6 +14,47 @@
   right: 10px;
 }
 
+:global(.fc-timegrid-event .fc-event-time ){
+  width: 100% !important;
+  font-size: 14px!important;
+  color: var(--base1)!important;
+  //background: var(--colorNavTitle1_2);
+  //background: var(--colorNavTitle3_3);
+  border-radius: 10px 10px 0 0;
+}
+
+:global(.fc-v-event .fc-event-title-container ){
+  font-size: 12px!important;
+  color: var(--base1) !important;
+  font-weight: 500!important;
+  padding-left: 10px;
+  background: var(--colorNavTitle1_3);
+  border-radius: 0px 0px 10px 10px;
+}
+
+:global(.css-118r9cm-MuiSvgIcon-root-MuiPickersCalendarHeader-switchViewIcon){
+  color: var(--label) !important;
+}
+
+:global(.css-gqbi0y-PrivatePickersYear-root){
+  display: flex!important;
+  justify-content: center!important;
+  align-items: center!important;
+}
+
+:global(.css-x15yrh-MuiPopper-root-MuiPickersPopper-root .PrivatePickersYear-yearButton){
+  text-align: center!important;
+  color: var(--label);
+}
+
+:global(.fc .fc-scroller:nth-child(1) ){
+  overflow: auto!important;
+}
+
+:global(.fc .fc-scrollgrid-section-header > *, .fc .fc-scrollgrid-section-footer > *){
+  overflow: hidden!important;
+}
+
 :global(.css-169iwlq-MuiCalendarPicker-root .MuiFormHelperText-root.Mui-error){
   color: var(--errorColor)!important;
 }
