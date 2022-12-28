@@ -26,13 +26,19 @@ import { daysOfTheWeek } from "constants/booking-form";
 import SelectorMultiple from "./selector/SelectorMultiple";
 import { Errors } from "constants/errors";
 import SelectorFloorAndRoom from "components/selector-floor-and-room/SelectorFloorAndRoom";
-import { roomsActions } from "redux&saga/slices/rooms.slice"; //added
+import { roomsActions } from "redux&saga/slices/rooms.slice";
+import classNames from "classnames/bind";
+import InputRe from "../input/InputRe";
+import {useForm} from "react-hook-form"; //added
 interface BookingFormProps {
   edit: boolean;
   handleSubmit: (event: React.FormEvent<HTMLFormElement>) => void;
   handleRemoveEvent: () => void;
   linkToCalendar?: boolean;
 }
+
+
+const cn = classNames.bind(styles)
 
 const BookingForm = ({
   linkToCalendar = false,
@@ -45,6 +51,12 @@ const BookingForm = ({
 
   const { title, start, end, floor, errors, description, roomId, daysOfWeek } =
     useAppSelector((state) => state.booking);
+
+  const {
+    reset,
+    register,
+    formState: { isDirty },
+  } = useForm({ mode: "all" });
 
   const onConfirm = () => {
     handleRemoveEvent();
@@ -108,15 +120,16 @@ const BookingForm = ({
       >
         Booking
       </Typography>
-      <Box
-        sx={{ displa: "flex", flexDirection: "column", p: "20px" }}
-        component="form"
+      <form
+          className={cn('form')}
+        // sx={{ displa: "flex", flexDirection: "column", p: "20px" }}
+        // component="form"
         onSubmit={handleSubmit}
         autoComplete="off"
       >
         <Grid container maxWidth={1000} spacing={3}>
           <Grid item xs={6}>
-            <Box sx={{ mb: "25px", height: "75px" }}>
+            <div className={cn('input-container')}>
               <TextField
                 error={Boolean(errors.title)}
                 autoFocus
@@ -128,8 +141,8 @@ const BookingForm = ({
                 onChange={(event) => dispatch(setTitle(event.target.value))}
                 helperText={errors.title ? errors.title : ""}
               />
-            </Box>
-            <Box
+            </div>
+            <Box className={cn('input-container','input-description')}
               sx={{
                 mb: "25px",
                 height: "120px",
@@ -139,6 +152,7 @@ const BookingForm = ({
               }}
             >
               <TextField
+                  className={cn('input-description')}
                 value={description}
                 onChange={(event) =>
                   dispatch(setDescription(event.target.value))
@@ -152,8 +166,11 @@ const BookingForm = ({
                 error={Boolean(errors.description)}
                 helperText={errors.description ? errors.description : ""}
               />
+
             </Box>
-            <Box sx={{ display: "flex", gap: "15px", height: "80px" }}>
+            <div
+                className={cn('input-and-date-container')}
+            >
               <DateAndTimePicker
                 date={start}
                 errorMsg={errors.start}
@@ -167,17 +184,12 @@ const BookingForm = ({
                 onChange={handleChangeEnd}
                 label="End"
               />
-            </Box>
+            </div>
             
           </Grid>
           <Grid item xs={6}>
-            <Box
-              sx={{
-                mb: "21px",
-                display: "flex",
-                gap: "15px",
-                height: "80px",
-              }}
+            <div
+                className={cn('input-container-days-of-the-week')}
             >
               <SelectorMultiple
                 value={daysOfWeek ? daysOfWeek : []}
@@ -186,16 +198,12 @@ const BookingForm = ({
                 daysOfWeek={daysOfTheWeek}
                 onChange={handleChangeWeek}
               />
-            </Box>
-            <Box sx={{ mb: "25px", height: "120px", }}>
+            </div>
+            <div className={cn('input-invite-coworker')}>
               <InviteCoworkers edit={edit}/>
-            </Box>
-            <Box
-              sx={{
-                display: "flex",
-                gap: "15px",
-                height: "80px",
-              }}
+            </div>
+            <div
+                className={cn('input-selector-floor-and-room')}
             >
               <SelectorFloorAndRoom
                 edit={edit}
@@ -205,11 +213,11 @@ const BookingForm = ({
                 onChangeRoom={handleChangeRoom}
                 errorMsg={errors}
               />
-            </Box>
+            </div>
           </Grid>
           <Grid item xs={12}>
-            <Box
-              sx={{ display: "flex", justifyContent: "center", gap: "50px" }}
+            <div
+                className={cn('button-container')}
             >
               {edit && (
                 <Button
@@ -228,10 +236,10 @@ const BookingForm = ({
               >
                 Save
               </Button>
-            </Box>
+            </div>
           </Grid>
         </Grid>
-      </Box>
+      </form>
       <ConfirmDialog
         open={openConfirmation}
         message="Do you want to delete event"
@@ -241,15 +249,15 @@ const BookingForm = ({
       {linkToCalendar && (
         <Link to="/calendar">
           <div
-            className={styles.linkToCalendarContainer}
+            className={cn('linkToCalendarContainer')}
             onClick={() => handleGoToCalendar()}
           >
             {/* added onClick */}
-            <span className={styles.goToCalendar}>
+            <span className={cn('goToCalendar')}>
               Can't find a free date? Go to the calendar{" "}
             </span>
             <svg
-              className={styles.svg}
+              className={cn('svg')}
               clipRule="evenodd"
               fillRule="evenodd"
               strokeLinejoin="round"
