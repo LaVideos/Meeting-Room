@@ -58,6 +58,15 @@
   color: var(--label)!important;
 }
 
+:global(.css-u9osun){
+  color: var(--label)!important;
+  top: -10px!important;
+}
+
+:global(.css-u9osun.Mui-error){
+  color: var(--additionalColor)!important;
+}
+
 :global(.css-1yllih9-MuiPaper-root-MuiPickersPopper-paper) {
   box-shadow: var(--outset-box-shadow) !important;
 }
