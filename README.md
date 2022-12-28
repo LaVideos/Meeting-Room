@@ -6,7 +6,7 @@
 
 ## 💡️ Start use resource
 
-1 Turn on cors 
+1. Turn on cors 
 
 if not, access will be denied
 
@@ -14,7 +14,7 @@ if not, access will be denied
  https://cors-anywhere.herokuapp.com/corsdemo
 ```
 
-2 Login
+2. Login
 
 ```sh
 admin account - 
