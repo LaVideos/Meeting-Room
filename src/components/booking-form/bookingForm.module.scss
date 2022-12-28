@@ -7,12 +7,99 @@
     fill: var(--accent-text-color);
   }
 }
+
+
+
+
+.form{
+  // sx={{ displa: "flex", flexDirection: "column", p: "20px" }}
+display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.input-container{
+  //sx={{ mb: "25px", height: "75px" }
+  margin-bottom: 25px;
+  height: 75px;
+}
+
+.input-container-days-of-the-week{
+  margin-bottom: 21px;
+  display: flex;
+  gap: 15px;
+  height: 80px;
+}
+
+.input-description{
+  height: 120px;
+  &.MuiOutlinedInput-notchedOutline{
+border-radius: 25px;
+}
+}
+
+.MuiOutlinedInput-notchedOutline{
+  //border-radius: 20px;
+}
+
+.input-and-date-container{
+  display: flex;
+  gap: 15px;
+  height: 80px;
+}
+
+.input-invite-coworker{
+  margin-bottom: 25px;
+  height: 120px;
+}
+
+.input-selector-floor-and-room{
+  display: flex;
+  gap: 15px;
+  height: 80px;
+}
+
+.button-container{
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+}
+
+
+
 .linkToCalendarContainer {
   display: inline-block;
   position: absolute;
   bottom: 10px;
   right: 10px;
 }
+
+
+
+:global(.css-14s5rfu-MuiFormLabel-root-MuiInputLabel-root.Mui-error){
+    color: var(--errorColor) !important;
+}
+
+:global(.css-1sumxir-MuiFormLabel-root-MuiInputLabel-root.Mui-focused){
+  color: var(--additionalColor)!important;
+  font-size: 20px!important;
+  top:-10px!important;
+}
+
+:global(.css-1sumxir-MuiFormLabel-root-MuiInputLabel-root){
+  color: var(--label) !important;
+  top:-10px!important;
+  font-size: 20px!important;
+}
+
+:global(.css-hfutr2-MuiSvgIcon-root-MuiSelect-icon){
+  color: var(--label)!important;
+}
+
+:global(.css-bpeome-MuiSvgIcon-root-MuiSelect-icon){
+  color: var(--label)!important;
+}
+
 
 :global(.fc-timegrid-event .fc-event-time ){
   width: 100% !important;

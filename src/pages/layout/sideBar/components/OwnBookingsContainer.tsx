@@ -23,7 +23,8 @@ export interface InitialStateBookig {
 
 const OwnBookingsContainer = () => {
   const [hasMore, setHasMore] = useState(true);
-  const { totalCount, limit, bookings,page } = useAppSelector(
+  const [isMore,setMore] = useState(false);
+  const { totalCount, limit, bookings,page} = useAppSelector(
     (state) => state.ownBookings
   );
   const pages = Math.ceil(totalCount / limit);
@@ -32,11 +33,17 @@ const OwnBookingsContainer = () => {
     if (page + 1 <= pages) {
       dispatch(ownBookingsActions.setPage(page+1));
       dispatch(ownBookingsActions.getOwnBookings(page + 1));
-    } 
+      setMore(false)
+    }else {
+      setMore(true);
+    }
   };
   useEffect(() => {
     dispatch(ownBookingsActions.getTotal(1));
   }, []);
+
+  useEffect(()=>{},[isMore])
+
 
   return (
     <div className={styles.myRoomsContainer} data-testid="my-rooms">
@@ -51,9 +58,9 @@ const OwnBookingsContainer = () => {
         className={styles.scroll}
         scrollThreshold="100%"
         loader={
-          <div style={{ display: "flex", justifyContent: "center" }}>
-            <Loader size="small"></Loader>
-          </div>
+         !isMore&&<div style={{ display: "flex", justifyContent: "center" }}>
+              <Loader size="small"></Loader>
+            </div>
         }
       >
         <div className={styles.roomsCardsContainer}>
