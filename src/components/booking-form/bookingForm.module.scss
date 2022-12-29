@@ -75,6 +75,50 @@ border-radius: 25px;
 }
 
 
+///
+
+:global(.css-vubbuv){//arrows
+  color: var(--label)!important;
+}
+
+:global(.css-10qkmc3){//days of week
+  color: var(--registration)!important;
+}
+
+:global(.css-f09ynp){//years-container
+  display: flex;
+  align-items: center!important;
+  justify-content: center!important;
+}
+
+:global(.css-m1gykc){ //year
+  display: flex!important;
+  align-items: center!important;
+  justify-content: center!important;
+}
+
+:global(.css-1flhz3h){ //time-black
+  color: var(--mainColorFont)!important;
+}
+
+:global(.css-1flhz3h.Mui-disabled){ //time-disabled
+  color: var(--label)!important;
+}
+
+:global(.css-1v2gfp5){//AM
+  color: var(--additionalColor)!important;
+}
+:global(.css-1v2gfp5){//AM
+  color: var(--additionalColor)!important;
+}
+
+:disabled(.css-1flhz3h.Mui-selected){//select tume
+  color: var(--additionalLighterColor) !important;
+}
+
+
+///
+
 
 :global(.css-14s5rfu-MuiFormLabel-root-MuiInputLabel-root.Mui-error){
     color: var(--errorColor) !important;
@@ -85,13 +129,9 @@ border-radius: 25px;
 }
 
 :global(.css-u9osun.Mui-error){
-  color: var(--additionalColor)!important;
+  color: var(--errorColor)!important;
   font-size: 20px!important;
   top:-10px!important;
-}
-
-:global(.css-1636szt){
-  color: var(--label)!important;
 }
 
 :global(.css-1636szt){
@@ -110,9 +150,6 @@ border-radius: 25px;
   color: var(--label)!important;
 }
 
-//:global(.css-u9osun){
-//  color: var(--label)!important;
-//}
 
 :global(.css-u9osun.Mui-focused){
   color: var(--additionalColor)!important;
@@ -129,8 +166,6 @@ border-radius: 25px;
 
 :global(.css-p0rm37){
   color: var(--additionalColor)!important;
-  font-size: 20px!important;
-  top:-10px!important;
 }
 
 
@@ -160,6 +195,10 @@ border-radius: 25px;
 
 :global(.css-bpeome){
   color: var(--label)!important;
+}
+
+:global(.css-p0rm37.Mui-disabled){
+  color: var(--base3)!important;
 }
 
 

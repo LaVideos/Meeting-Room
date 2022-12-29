@@ -64,9 +64,18 @@
   border-radius: 50% !important;
 }
 
+:global(.css-1yq5fb3) {
+  background-image: url("../../../assets/icons/Calendar.png")!important;
+  background-size: 15px!important;
+  background-position: center!important;
+  background-repeat: no-repeat!important;
+  margin-right: -12px !important;
+  border-radius: 50% !important;
+}
+
 
 :global(.css-u9osun.Mui-error){
-  color: var(--additionalColor)!important;
+  color: var(--errorColor)!important;
 }
 
 :global(.css-1yllih9-MuiPaper-root-MuiPickersPopper-paper) {
