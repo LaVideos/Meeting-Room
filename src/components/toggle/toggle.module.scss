@@ -29,7 +29,8 @@
   }
   &:checked:before {
     box-shadow: var(--toogle-box-shadow-checked);
-    color: var(--toggle-sun)!important;
+    & .sun svg {
+    color: var(--toggle-sun)!important;}
   }
 }
 
@@ -46,7 +47,7 @@
   transition: 350ms;
 }
 
-.moon{
+.moon svg{
   position: relative;
   top:-49px;
   //left:2px;
@@ -56,7 +57,7 @@
   height: 50px;
 }
 
-.sun{
+.sun svg{
   position: relative;
   top:-95px;
   //left:66px;
