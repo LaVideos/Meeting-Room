@@ -102,7 +102,7 @@ border-radius: 25px;
 }
 
 :global(.css-1flhz3h.Mui-disabled){ //time-disabled
-  color: var(--label)!important;
+  color: var(--errorColor)!important;
 }
 
 :global(.css-1v2gfp5){//AM
@@ -112,7 +112,7 @@ border-radius: 25px;
   color: var(--additionalColor)!important;
 }
 
-:disabled(.css-1flhz3h.Mui-selected){//select tume
+:global(.css-1flhz3h.Mui-selected){//select tume
   color: var(--additionalLighterColor) !important;
 }
 

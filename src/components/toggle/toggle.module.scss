@@ -29,7 +29,7 @@
   }
   &:checked:before {
     box-shadow: var(--toogle-box-shadow-checked);
-    color: var(--toggle-sun);
+    color: var(--toggle-sun)!important;
   }
 }
 
@@ -51,7 +51,7 @@
   top:-49px;
   //left:2px;
   left:62px;
-  color: var(--toggle-moon);
+  color: var(--toggle-moon)!important;
   pointer-events: none;
   height: 50px;
 }
@@ -61,7 +61,7 @@
   top:-95px;
   //left:66px;
   left:8px;
-  color: var(--toggle-sun);
+  color: var(--toggle-sun)!important;
   pointer-events: none;
   height: 36px;
   width: 36px;
