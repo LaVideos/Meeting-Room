@@ -47,14 +47,17 @@
   transition: 350ms;
 }
 
-.moon svg{
+.moon{
   position: relative;
   top:-49px;
   //left:2px;
   left:62px;
-  color: var(--toggle-moon)!important;
   pointer-events: none;
   height: 50px;
+}
+
+.moon svg{
+  color: var(--toggle-moon)!important;
 }
 
 .sun svg{
@@ -62,11 +65,14 @@
   top:-95px;
   //left:66px;
   left:8px;
-  color: var(--toggle-sun)!important;
   pointer-events: none;
   height: 36px;
   width: 36px;
   animation:var(--animation-sun);
+}
+
+.sun svg{
+  color: var(--toggle-sun)!important;
 }
 
 .moon svg{
