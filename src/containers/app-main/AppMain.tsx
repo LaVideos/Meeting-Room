@@ -1,18 +1,22 @@
-import { Box } from '@mui/material'
+import {Box} from '@mui/material'
 import SideBar from '../../pages/layout/sideBar/SideBar';
-import { Outlet } from 'react-router-dom';
+import {Outlet} from 'react-router-dom';
+import styles from "./AppMain.container.scss";
+import React from "react";
+import classNames from "classnames/bind";
+
+const cn = classNames.bind(styles)
 
 const AppMain: React.FunctionComponent = () => {
-
-  return (
-    <Box sx={{ height: '100%', display: 'flex' }}>
-      <Box sx={{ flex: '1 1 auto' }}>
+      return (
+    <div className={cn('main-container')}>
+      <div className={cn('outlet-container')}>
         <Outlet />
-      </Box>
-      <Box sx={{ flex: '0 0 20%' }}>
-        <SideBar userName={"Some Guy"} />
-      </Box>
-    </Box>
+      </div>
+      <div className={cn('sidebar-container')}>
+        <SideBar/>
+      </div>
+    </div>
   )
 }
 

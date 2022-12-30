@@ -1,0 +1,12 @@
+.main-container{
+  height: 100%;
+  display: flex;
+}
+
+.outlet-container{
+  flex: 1 1 auto;
+}
+
+.sidebar-container{
+  flex: 0 0 20%;
+}

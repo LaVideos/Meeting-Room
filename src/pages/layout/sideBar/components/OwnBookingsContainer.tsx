@@ -1,76 +1,60 @@
-import styles from "../SideBar.module.scss";
-import { useEffect, useState } from "react";
+import styles from "./OwnBookings.module.scss";
+import {useEffect, useState} from "react";
 import InfiniteScroll from "react-infinite-scroll-component";
 import "components/timePicker/styles/styles.module.scss";
-import OwnBookings from "./OwnBookings";
-import { ownBookingsActions } from "redux&saga/slices/ownBookings.slice";
-import { useAppSelector, useAppDispatch } from "hooks/toolkitHooks";
+import {BookingProps, ownBookingsActions} from "redux&saga/slices/ownBookings.slice";
+import {useAppDispatch, useAppSelector} from "hooks/toolkitHooks";
 import Loader from "pages/layout/loader/Loader";
-import { flexbox } from "@mui/system";
-interface booking {
-  bookingId: number;
-  title: string;
-  description: string;
-  startDateTime: string;
-  endDateTime: string;
-  isRecurring: boolean;
-  creatorId_FK: number;
-  room_FK: number;
-}
-export interface InitialStateBookig {
-  bookings: Array<booking> | [];
-}
+import OwnBookings from "./OwnBookings";
+
+import classNames from 'classnames/bind';
+
+const cn = classNames.bind(styles)
 
 const OwnBookingsContainer = () => {
-  const [hasMore, setHasMore] = useState(true);
-  const [isMore,setMore] = useState(false);
-  const { totalCount, limit, bookings,page} = useAppSelector(
-    (state) => state.ownBookings
-  );
-  const pages = Math.ceil(totalCount / limit);
-  const dispatch = useAppDispatch();
-  const handleNext = () => {
-    if (page + 1 <= pages) {
-      dispatch(ownBookingsActions.setPage(page+1));
-      dispatch(ownBookingsActions.getOwnBookings(page + 1));
-      setMore(false)
-    }else {
-      setMore(true);
-    }
-  };
-  useEffect(() => {
-    dispatch(ownBookingsActions.getTotal(1));
-  }, []);
 
-  useEffect(()=>{},[isMore])
+  const dispatch = useAppDispatch()
+  const { bookings, page,totalCount, loading} = useAppSelector(state => state.ownBookings)
 
+  const [hasMore, setHasMore] = useState<boolean>(true);
+
+    useEffect(() => {
+      dispatch(ownBookingsActions.reset())
+      dispatch(ownBookingsActions.getOwnBookings({ page: 1 }))
+  }, [dispatch])
+
+    useEffect(()=>{},[bookings])
+
+  const handleMoreData = () => {
+          dispatch(ownBookingsActions.getOwnBookings({page: page}))
+          dispatch(ownBookingsActions.setPage(page + 1))
+  }
 
   return (
-    <div className={styles.myRoomsContainer} data-testid="my-rooms">
-      <p className={styles.labelMyRooms}>my bookings</p>
+      <div className={cn('myRoomsContainer')} data-testid="my-rooms">
+          <p className={cn('labelMyRooms')}>my bookings</p>
 
-      <InfiniteScroll
-        height="50vh"
-        dataLength={page}
-        endMessage={<p></p>}
-        next={() => handleNext()}
-        hasMore={hasMore}
-        className={styles.scroll}
-        scrollThreshold="100%"
-        loader={
-         !isMore&&<div style={{ display: "flex", justifyContent: "center" }}>
-              <Loader size="small"></Loader>
+        <InfiniteScroll
+            height="55vh"
+            dataLength={page}
+            next={handleMoreData}
+            hasMore={hasMore}
+            className={cn('scroll')}
+            loader={
+             !loading && <div className={cn('loader')}>
+                    <Loader size="small"></Loader>
+                </div>
+            }
+        >
+            <div className={styles.roomsCardsContainer}>
+            {
+            bookings.map((booking:BookingProps) =>{
+            return <OwnBookings key={booking.bookingId} booking={booking} index={booking.bookingId}></OwnBookings>})
+          }
             </div>
-        }
-      >
-        <div className={styles.roomsCardsContainer}>
-          {/* <MyRoomCard mockedData={mockedData}></MyRoomCard> */}
-          {bookings.map((booking:any, index) => {
-            return <OwnBookings key={index} booking={booking} index={index}></OwnBookings>;
-          })}
-        </div>
-      </InfiniteScroll>
-    </div>
-  );
+        </InfiniteScroll>
+      </div>
+  )
+
 };
 export default OwnBookingsContainer;

@@ -41,7 +41,7 @@ const LoginComponent = () => {
     <div className={cn("login_container", "animate__bounceIn animate__zoomIn")}>
       <div className={cn("logo_container")}>
         <div className={cn("logo")}>
-          <span className={cn("incora")}>INCORA</span>
+          <span className={cn("incora")}>Booking</span>
         </div>
       </div>
       <form onSubmit={handleSubmit(submit)} className={cn("form_container")}>

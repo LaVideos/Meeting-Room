@@ -1,0 +1,33 @@
+.time-container{
+
+}
+
+.start-end-container{
+  display: flex;
+  align-items: center;
+  margin: 5px 0;
+}
+
+.divider{
+  width: 90%;
+  border-bottom: 2px solid var(--additionalLighterColor);
+}
+
+.svg-box svg{
+  margin-right: 5px;
+  font-size: 18px;
+  color: var(--label);
+}
+
+.svg-box{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.start-data,.end-data{
+  color:var(--label);
+  font-weight: 400;
+  font-size: 12px;
+  margin: 5px;
+}
