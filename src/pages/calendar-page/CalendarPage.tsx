@@ -1,10 +1,10 @@
 import { Box } from "@mui/material";
 import React, { useCallback, useState, useEffect, useContext, useRef } from "react";
 import FullCalendar, { DateSelectArg, DatesSetArg, EventClickArg } from '@fullcalendar/react';
-import Modal from 'components/modal';
+import Modal from 'components/popup-modal-dialog/modal';
 import { getFromLocalStorage } from 'services/local-storage.service';
 import Calendar from 'components/calendar';
-import BookingForm from 'components/booking-form';
+import BookingForm from 'components/booking/booking-form';
 import { useAppDispatch, useAppSelector } from "hooks/toolkitHooks";
 import {
   addOneBooking,
@@ -26,8 +26,8 @@ import { BookingEvent } from "interfaces/booking/Booking";
 import { disabledPressedButton } from "utils/disabled-pressed-button";
 import { SelectChangeEvent } from "@mui/material/Select";
 import { setFloor, setRoomId } from 'redux&saga/slices/booking.slice';
-import CheckboxWithLabel from "components/checkbox-with-label";
-import SelectorFloorAndRoom from "components/selector-floor-and-room/SelectorFloorAndRoom";
+import CheckboxWithLabel from "components/interactive-tools/checkbox-with-label";
+import SelectorFloorAndRoom from "components/booking/selector-floor-and-room/SelectorFloorAndRoom";
 
 const CalendarPage = () => {
   const [openModal, setOpenModal] = useState<boolean>(false);

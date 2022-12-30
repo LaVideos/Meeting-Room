@@ -5,7 +5,11 @@ import { useAppSelector, useAppDispatch } from "hooks/toolkitHooks";
 import { useEffect } from "react";
 import moment, { now } from "moment";
 import { roomsActions } from "redux&saga/slices/rooms.slice";
-import Loader from "pages/layout/loader/Loader";
+import Loader from "components/loading/loader/Loader";
+import classNames from "classnames/bind";
+
+const cn = classNames.bind(styles)
+
 const Rooms = () => {
   const {
     roomsByFloor,
@@ -36,12 +40,12 @@ const Rooms = () => {
   }, [rooms]);
 
   return (
-    <div className={styles.roomsContainer}>
-      <div className={styles.mainContainer}>
+    <div className={cn('roomsContainer')}>
+      <div className={cn('mainContainer')}>
         <Header />
-        <div className={styles.roomsList}>
-          <div className={styles.boxInset}></div>
-          <div className={styles.boxOutset}></div>
+        <div className={cn('roomsList')}>
+          <div className={cn('boxInset')}></div>
+          <div className={cn('boxOutset')}></div>
 
           {Object.keys(roomsByFloor).length > 0 && filter == "all" ? (
             floors.map((currentFloor, index) => {
@@ -51,17 +55,17 @@ const Rooms = () => {
             Object.keys(roomsByFloor).length > 0 ? (
               <Floors currentFloor={Number(filter)}></Floors>
             ) : (
-              <p className={styles.noFloor}>
+              <p className={cn('noFloor')}>
                 There are no meeting rooms on this floor
               </p>
             )
           ) : (
-            <div className={styles.loader}>
+            <div className={cn('loader')}>
               <Loader size="large" />
             </div>
           )}
-          <div className={styles.boxInset2}></div>
-          <div className={styles.boxOutset2}></div>
+          <div className={cn('boxInset2')}></div>
+          <div className={cn('boxOutset2')}></div>
         </div>
       </div>
     </div>

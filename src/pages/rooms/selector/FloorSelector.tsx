@@ -1,21 +1,29 @@
 import styles from "./selector.module.scss";
-import cn from "classnames";
-import { useState } from "react";
-//@ts-ignore
-const FloorSelector = ({ arr, floor,setFloor }) => {
+import {useState} from "react";
+import classNames from "classnames/bind";
+
+const cn = classNames.bind(styles)
+
+interface FloorSelectorProps{
+    arr:number[],
+    floor:string,
+    setFloor:any
+}
+
+const FloorSelector = ({ arr, floor,setFloor }:FloorSelectorProps) => {
   const [openFloor, setOpenFloor] = useState(false);
 
   return (
-    <ul className={styles.dropdown}>
+    <ul className={cn('dropdown')}>
       <input
-        className={styles.input}
+        className={cn('input')}
         type="text"
         value={`${floor} Floor`}
         readOnly={true}
         onClick={() => setOpenFloor((prev) => !prev)}
       />
-      <div className={cn(styles.ico, openFloor && styles.open)}></div>
-      <ul className={cn(styles.options, openFloor && styles.show)}>
+      <div className={cn('ico', openFloor && 'open')}></div>
+      <ul className={cn('options', openFloor && 'show')}>
         {arr.map((currentFloor:any) => {
           return (
             <li
@@ -24,7 +32,7 @@ const FloorSelector = ({ arr, floor,setFloor }) => {
                 setOpenFloor(false);
                 setFloor(currentFloor.toString());
               }}
-              className={styles.item}
+              className={cn('item')}
             >
               {currentFloor}
             </li>

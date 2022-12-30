@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import {SubmitHandler, useForm} from "react-hook-form";
 import {ErrorComponent, InputRe} from '../..';
-import Button from "components/button";
+import Button from "components/interactive-tools/button";
 import {checkPasswordMatch} from "../../../utils/auth-foo";
 import {ChangePasswordSchema} from "../../../utils/yup.validation";
 import {yupResolver} from "@hookform/resolvers/yup/dist/yup";
@@ -12,8 +12,8 @@ import styles from './ChangePassword.module.scss'
 import {useAppDispatch, useAppSelector} from "../../../hooks/toolkitHooks";
 import {authActions} from "../../../redux&saga/slices/auth.slice";
 import {getUserData} from "../../../services/local-storage.service";
-import LoadingComponent from "../../tools/simple/loading/LoadingComponent";
-import ErrorToManyRequest from "../../tools/simple/error-429/ErrorToManyRequest";
+import LoadingComponent from "../../loading/loading/LoadingComponent";
+import ErrorToManyRequest from "../../error/error-429/ErrorToManyRequest";
 
 const cn = classNames.bind(styles)
 

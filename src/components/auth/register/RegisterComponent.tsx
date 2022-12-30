@@ -3,7 +3,7 @@ import {SubmitHandler, useForm} from "react-hook-form";
 import {NavLink, useNavigate, useParams} from "react-router-dom";
 
 
-import Button from "components/button";
+import Button from "components/interactive-tools/button";
 import {ErrorComponent, InputRe, SwitchToLoginComponent} from "../../index";
 
 import classNames from 'classnames/bind';
@@ -15,7 +15,7 @@ import {yupResolver} from "@hookform/resolvers/yup";
 import {RegisterSchema} from "../../../utils/yup.validation";
 
 import 'animate.css';
-import {ResponsePopup} from "../../tools/simple/response-popup/ResponsePopup";
+import {ResponsePopup} from "../../popup-modal-dialog/response-popup/ResponsePopup";
 import {regex} from "../../../constants/valid/regex";
 
 

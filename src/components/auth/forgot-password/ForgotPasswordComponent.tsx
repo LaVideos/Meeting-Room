@@ -2,7 +2,7 @@ import React, {useEffect} from 'react';
 import {SubmitHandler, useForm} from "react-hook-form";
 import classNames from 'classnames/bind';
 import styles from './ForgotPassword.module.scss'
-import Button from "components/button";
+import Button from "components/interactive-tools/button";
 import {InputRe} from "../../index";
 import {EmailSchema} from "../../../utils/yup.validation";
 import {yupResolver} from "@hookform/resolvers/yup/dist/yup";
@@ -10,8 +10,8 @@ import {useAppDispatch, useAppSelector} from "../../../hooks/toolkitHooks";
 import {authActions} from "../../../redux&saga/slices/auth.slice";
 import {NavLink} from "react-router-dom";
 import {useModal} from "../../../hooks/show.modal";
-import {DialogComponent} from "../../dialog/DialogComponent";
-import CloseBtn from "../../close-btn/CloseBtn";
+import {DialogComponent} from "../../popup-modal-dialog/dialog/DialogComponent";
+import CloseBtn from "../../interactive-tools/close-btn/CloseBtn";
 import "animate.css";
 
 import {FaCloud,} from 'react-icons/fa';

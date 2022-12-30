@@ -1,29 +1,36 @@
 import styles from "./selector.module.scss";
-import cn from "classnames";
 import { useState, useEffect } from "react";
-import MockedData from "../components/MockedData";
-//@ts-ignore
-const RoomsSelector = ({ floor, name = MockedData[0].name }) => {
+import MockedData from "../parts/MockedData";
+import classNames from "classnames/bind";
+
+interface RoomsSelector{
+    floor:string,
+    name:string
+}
+
+const cn = classNames.bind(styles)
+
+const RoomsSelector = ({ floor, name = MockedData[0].name }:RoomsSelector) => {
   const [room, setRoom] = useState(name);
   const [openRoom, setOpenRoom] = useState(false);
 
   return (
-    <ul className={styles.dropdown}>
+    <ul className={cn('dropdown')}>
       <input
-        className={styles.input}
+        className={cn('input')}
         type="text"
         value={room}
         onClick={() => setOpenRoom((prev) => !prev)}
         readOnly={true}
       />
-      <div className={cn(styles.ico, openRoom && styles.open)}></div>
-      <ul className={cn(styles.options, openRoom && styles.show)}>
+      <div className={cn(cn('ico'), openRoom && cn('open'))}></div>
+      <ul className={cn('options', openRoom && 'show')}>
         {MockedData.map((data) => {
           if (data.floor.toString() == floor.toString()) {
             return (
               <li
                 key={data.name}
-                className={styles.item}
+                className={cn('item')}
                 onClick={() => {
                   setOpenRoom(false);
                   setRoom(data.name);

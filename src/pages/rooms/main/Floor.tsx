@@ -1,6 +1,7 @@
-import RoomCard from "../components/RoomCard";
-import styles from "../rooms.module.scss";
+import RoomCard from "../parts/RoomCard";
+import styles from "./Floor.module.scss";
 import { useAppSelector, useAppDispatch } from "hooks/toolkitHooks";
+import classNames from "classnames/bind";
 interface floor {
   currentFloor: number;
 }
@@ -26,6 +27,9 @@ interface rooms {
   devices: Array<devices>;
 }
 
+const cn = classNames.bind(styles)
+
+
 const Floors = ({ currentFloor }: floor) => {
   const dataFloor = useAppSelector(
     (state) => state.rooms.roomsByFloor[currentFloor-1]
@@ -39,9 +43,9 @@ const Floors = ({ currentFloor }: floor) => {
       {dataFloor.length > 0 && (
         <>
           {filter == "all" && (
-            <p className={styles.pFloor}>Floor {currentFloor}</p>
+            <p className={cn('pFloor')}>Floor {currentFloor}</p>
           )}
-          <div className={styles.floor}>
+          <div className={cn('floor')}>
             {length > 0 &&
               dataFloor?.map((currentData, index) => (
                 <RoomCard

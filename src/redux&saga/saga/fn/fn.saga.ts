@@ -1,4 +1,4 @@
-import {ResponsePopup} from "../../../components/tools/simple/response-popup/ResponsePopup";
+import {ResponsePopup} from "../../../components/popup-modal-dialog/response-popup/ResponsePopup";
 import {AxiosError} from "axios";
 import {put} from "redux-saga/effects";
 import {authService} from "../../../services/auth.service/auth.services";

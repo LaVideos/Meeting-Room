@@ -1,7 +1,7 @@
 import {call, fork, put, take} from 'redux-saga/effects';
 import {authActions} from 'redux&saga/slices/auth.slice';
 import {UserService} from "../../services/user.service/user.service";
-import {ResponsePopup} from "../../components/tools/simple/response-popup/ResponsePopup";
+import {ResponsePopup} from "../../components/popup-modal-dialog/response-popup/ResponsePopup";
 import {PayloadAction} from "@reduxjs/toolkit";
 import {AxiosResponse} from "axios";
 import {authService} from "../../services/auth.service/auth.services";

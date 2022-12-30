@@ -11,7 +11,7 @@ import ConstructionIcon from '@mui/icons-material/Construction';
 
 import classNames from 'classnames/bind';
 import styles from './AdminModalTool.module.scss'
-import CloseBtn from "../../close-btn/CloseBtn";
+import CloseBtn from "../../interactive-tools/close-btn/CloseBtn";
 import {NavLink} from "react-router-dom";
 
 const cn = classNames.bind(styles)

@@ -2,7 +2,7 @@ import {ChangePasswordComponent} from 'components';
 import {useLocation, useNavigate} from 'react-router-dom';
 import KeyboardBackspaceIcon from '@mui/icons-material/KeyboardBackspace';
 import Typography from '@mui/material/Typography'
-import ProfileForm from 'components/profile-form';
+import ProfileForm from 'components/profile/profile-form';
 
 import classNames from 'classnames/bind';
 import styles from './Profile.module.scss'

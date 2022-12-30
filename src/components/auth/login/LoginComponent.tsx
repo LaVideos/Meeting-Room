@@ -7,7 +7,7 @@ import "animate.css";
 import classNames from "classnames/bind";
 import styles from "./LoginComponent.module.scss";
 import {ErrorComponent, InputRe} from "../../index";
-import Button from "components/button";
+import Button from "components/interactive-tools/button";
 import {useAppDispatch, useAppSelector} from "../../../hooks/toolkitHooks";
 import {authActions} from "../../../redux&saga/slices/auth.slice";
 

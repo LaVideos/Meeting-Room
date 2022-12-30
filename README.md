@@ -44,7 +44,7 @@ user account -
 3.  Run the application:
 
 ```sh
- npm run start
+ npm start
 ```
 ### ⭕️ In case of problem
 
@@ -58,12 +58,65 @@ user account -
 npm config set legacy-peer-deps true
 ```
 
+## 📷️ Screenshots
 
+If you don`t want to visit the deployed site - you can view several screenshots of the main pages
+(without actions)
+
+
+```
+Login page
+```
+![Screenshot](C:\Users\lavid\Desktop\Meeting-Room3\src\assets\screenshot\login.png)
+
+```
+Register page
+```
+![Screenshot](C:\Users\lavid\Desktop\Meeting-Room3\src\assets\screenshot\register.png)
+
+```
+Forgot Password page
+```
+![Screenshot](C:\Users\lavid\Desktop\Meeting-Room3\src\assets\screenshot\forgotPassword.png)
+```
+Success Change
+```
+![Screenshot](C:\Users\lavid\Desktop\Meeting-Room3\src\assets\screenshot\forgotPasswordSuccess.png)
+```
+Rooms Page
+```
+![Screenshot](C:\Users\lavid\Desktop\Meeting-Room3\src\assets\screenshot\rooms.png)
+
+```
+Calendar Page
+```
+![Screenshot](C:\Users\lavid\Desktop\Meeting-Room3\src\assets\screenshot\calendar.png)
+
+```
+Invite Page
+```
+![Screenshot](C:\Users\lavid\Desktop\Meeting-Room3\src\assets\screenshot\invite.png)
+![Screenshot](C:\Users\lavid\Desktop\Meeting-Room3\src\assets\screenshot\tools.png)
+
+```
+Not Found Page
+```
+![Screenshot](C:\Users\lavid\Desktop\Meeting-Room3\src\assets\screenshot\notFound.png)
+
+```
+Settings Page
+```
+![Screenshot](C:\Users\lavid\Desktop\Meeting-Room3\src\assets\screenshot\profile.png)
+![Screenshot](C:\Users\lavid\Desktop\Meeting-Room3\src\assets\screenshot\change.png)
+
+```
+Black theme example
+```
+![Screenshot](C:\Users\lavid\Desktop\Meeting-Room3\src\assets\screenshot\black.png)
 
 ## 🤙🏼 Contact
 
 For questions write to hanley77@ukr.net or eva.cherkashyna2108@gmail.com or lavideos1313@gmail.com
-
 
 
 [react.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB

@@ -1,0 +1,87 @@
+:global(button.css-h2z9v1-MuiButtonBase-root-MuiIconButton-root-MuiClock-amButton),
+:global(button.css-rjqbug-MuiButtonBase-root-MuiIconButton-root-MuiClock-pmButton) {
+  box-shadow: var(--datePicker-box-shadow) !important;
+  color: var(--accent-color) !important;
+  cursor: default;
+  &:hover {
+    background-color: transparent;
+  }
+}
+
+//:global(.css-1sumxir-MuiFormLabel-root-MuiInputLabel-root.Mui-focused){
+//  color: var(--accent-color)!important;
+//}
+//
+//:global(.css-hfutr2-MuiSvgIcon-root-MuiSelect-icon), :global(.css-bpeome-MuiSvgIcon-root-MuiSelect-icon){
+//  color: var(--accent-color)!important;
+//}
+//
+//:global(.css-hfutr2-MuiSvgIcon-root-MuiSelect-icon.Mui-disabled){
+//  color: var(--registration)!important;
+//}
+
+//:global(label.css-1sumxir-MuiFormLabel-root-MuiInputLabel-root) {
+//  font-size: 20px!important;
+//  top: -11px!important;
+//  left: 9px!important;
+//  color: var(--label)!important;
+//}
+//
+//:global(.css-u9osun){
+//  color: var(--label)!important;
+//  top: -10px!important;
+//}
+
+:global(button.css-zcgqxx-MuiButtonBase-root-MuiIconButton-root-MuiClock-pmButton),
+:global(button.css-1gp5qnb-MuiButtonBase-root-MuiIconButton-root-MuiClock-amButton) {
+  &:hover {
+    box-shadow: var(--datePicker-box-shadow) !important;
+  }
+}
+
+:global(span.MuiClockNumber-root.Mui-selected.css-zddqwy-MuiClockNumber-root) {
+  background-color: transparent !important;
+  box-shadow: none;
+  color: var(--dateAndTimePicker-selected-global) !important;
+}
+:global(span.css-8je8zh-MuiTouchRipple-root) {
+  overflow: hidden;
+  pointer-events: none;
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-radius: inherit;
+}
+:global(.css-1yq5fb3-MuiButtonBase-root-MuiIconButton-root) {
+  //background-image: url("src/assets/icons/Calendar.png")!important;
+  background-size: 15px!important;
+  background-position: center!important;
+  background-repeat: no-repeat!important;
+  margin-right: -12px !important;
+  border-radius: 50% !important;
+}
+
+:global(.css-1yq5fb3) {
+  //background-image: url("./Calendar.png")!important;
+  background-size: 15px!important;
+  background-position: center!important;
+  background-repeat: no-repeat!important;
+  margin-right: -12px !important;
+  border-radius: 50% !important;
+}
+
+
+:global(.css-u9osun.Mui-error){
+  color: var(--errorColor)!important;
+}
+
+:global(.css-1yllih9-MuiPaper-root-MuiPickersPopper-paper) {
+  box-shadow: var(--outset-box-shadow) !important;
+}
+:global(.MuiClock-squareMask) {
+  box-shadow: var(--inset-input-shadow);
+}
+

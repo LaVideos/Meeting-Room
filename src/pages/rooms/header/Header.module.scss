@@ -1,0 +1,61 @@
+.header {
+  display: flex;
+  position: fixed;
+  //top: 41px;
+  top: 0;
+  left: 0;
+  z-index: 2;
+
+  gap: 30px;
+  padding: 15px 50px;
+  //width: calc(100vw - 310px);
+  width: calc(100vw - 20%);
+
+  // background-color: var(--primary-color);
+}
+
+
+.filters {
+  border-radius: 5px;
+  padding: 10px 20px;
+  box-shadow: var(--outset-box-shadow);
+  color: var(--primary-text-color);
+  &:hover {
+    color: var(--accent-color);
+  }
+  background-color: var(--primary-color);
+}
+.filters.active {
+  box-shadow: var(--inset-input-shadow);
+}
+
+.indicators {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  color: var(--primary-text-color);
+}
+.indicatorCont {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+.indicator,
+.indicatorTrue {
+  width: 18px;
+  height: 18px;
+  border-radius: 100%;
+}
+
+.statusIco {
+  fill: var(--primary-color);
+}
+.indicator {
+  background-color: var(--indicator);
+}
+.indicatorTrue {
+  background-color: var(--accent-text-color);
+}

@@ -2,7 +2,7 @@ import {Route, Routes} from 'react-router-dom';
 import {ChangePasswordPage, ForgotPasswordPage, LoginPage, RegisterPage, VerifyEmailPage} from 'pages';
 import NotFound from 'pages/not-found/NotFound';
 import { ProtectedRoute } from './ProtectedRoute';
-import AppMain from "../containers/app-main/AppMain";
+import AppMain from "../layouts/app-main/AppMain";
 import Rooms from "../pages/rooms";
 import CalendarPage from "../pages/calendar-page";
 import Profile from "../pages/profile";
