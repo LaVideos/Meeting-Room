@@ -58,62 +58,6 @@ user account -
 npm config set legacy-peer-deps true
 ```
 
-## 📷️ Screenshots
-
-If you don`t want to visit the deployed site - you can view several screenshots of the main pages
-(without actions)
-
-
-```
-Login page
-```
-![Screenshot](.\src\assets\screenshot\login.png)
-
-```
-Register page
-```
-![Screenshot](.\src\assets\screenshot\register.png)
-
-```
-Forgot Password page
-```
-![Screenshot](.\src\assets\screenshot\forgotPassword.png)
-```
-Success Change
-```
-![Screenshot](.\src\assets\screenshot\forgotPasswordSuccess.png)
-```
-Rooms Page
-```
-![Screenshot](.\src\assets\screenshot\rooms.png)
-
-```
-Calendar Page
-```
-![Screenshot](.\src\assets\screenshot\calendar.png)
-
-```
-Invite Page
-```
-![Screenshot](.\src\assets\screenshot\invite.png)
-![Screenshot](.\src\assets\screenshot\tools.png)
-
-```
-Not Found Page
-```
-![Screenshot](.\src\assets\screenshot\notFound.png)
-
-```
-Settings Page
-```
-![Screenshot](.\src\assets\screenshot\profile.png)
-![Screenshot](.\src\assets\screenshot\change.png)
-
-```
-Black theme example
-```
-![Screenshot](.\src\assets\screenshot\black.png)
-
 ## 🤙🏼 Contact
 
 For questions write to hanley77@ukr.net or eva.cherkashyna2108@gmail.com or lavideos1313@gmail.com
