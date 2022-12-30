@@ -70,7 +70,7 @@ export function* addOneBooking(action: PayloadAction<OneBooking>) {
       }
     }]));
     yield put(ownBookingsActions.reset());
-    yield put(ownBookingsActions.getTotal(1));
+    yield put(ownBookingsActions.getOwnBookings({ page: 1 }));
     const location = window.location.pathname.toString();
     if (location == "/rooms") {
       yield RoomBookingPopup.Success();
@@ -104,7 +104,8 @@ export function* addRecurringBooking(action: PayloadAction<AddRecurringBooking>)
     }))
     yield put(addBookingSuccess(getEvents));
     yield put(ownBookingsActions.reset());
-    yield put(ownBookingsActions.getTotal(1));
+
+    yield put(ownBookingsActions.getOwnBookings({ page: 1 }));
     const location = window.location.pathname.toString();
     if (location == "/rooms") {
       yield RoomBookingPopup.Success();
@@ -128,7 +129,7 @@ export function* editOneBooking(action: PayloadAction<OneBooking>) {
     const { bookingId } = response.data;
     yield put(editOneBookingSuccess(bookingId));
     yield put(ownBookingsActions.reset());
-    yield put(ownBookingsActions.getTotal(1));
+    yield put(ownBookingsActions.getOwnBookings({ page: 1 }));
   } catch (error: any) {
     yield put(setBookingError({ errorMsg: error.response.data.message }));
     yield put(setLoading(false));
@@ -143,7 +144,7 @@ export function* editRecurringBooking(action: PayloadAction<EditRecurringBooking
       yield put(editRecurringBookingSuccess(recurringId));
     }
     yield put(ownBookingsActions.reset());
-    yield put(ownBookingsActions.getTotal(1));
+    yield put(ownBookingsActions.getOwnBookings({ page: 1 }));
   } catch (error: any) {
     yield put(setBookingError({ errorMsg: error.response.data.message }));
     yield put(setLoading(false));
@@ -156,7 +157,7 @@ export function* deleteBooking(action: PayloadAction<DeleteBookingInterface>) {
     yield call(bookingService.delete, { url: `bookings/${isRecurring ? "recurring" : "one-time"}/${id}` });
     yield put(deleteBookingSuccess({ id: id, isRecurring: isRecurring }));
     yield put(ownBookingsActions.reset());
-    yield put(ownBookingsActions.getTotal(1));
+    yield put(ownBookingsActions.getOwnBookings({ page: 1 }));
   } catch (error: any) {
     yield put(setBookingError({ errorMsg: error.response.data.message }));
     yield put(setLoading(false));

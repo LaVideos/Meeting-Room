@@ -6,24 +6,27 @@ import ActionButton from "../../../components/icon-button/IconButton";
 import NavButtons from "pages/layout/sideBar/NavButtons";
 import {NavLink, useLocation} from "react-router-dom";
 import {PseudoAvatar} from "../../../components";
-import {useAppSelector} from "hooks/toolkitHooks";
 import {useModal} from "../../../hooks/show.modal";
 import {DialogComponent} from "../../../components/dialog/DialogComponent";
 import AdminModalTool from "../../../components/admin/admin-modal-tools/AdminModalTool";
 import BadgeRe from "../../../components/badge/BadgeRe";
 import {getUserData} from "../../../services/local-storage.service";
-import {colors, colorsFn} from "../../../utils/colors.arr";
+import {colorsFn} from "../../../utils/colors.arr";
+import classNames from "classnames/bind";
+import {FaToolbox} from "react-icons/fa";
 
-type SideBarProps = { userName: string };
+const cn = classNames.bind(styles)
 
-const SideBar = ({ userName }: SideBarProps) => {
+
+
+const SideBar = () => {
   const location = useLocation();
   let {isShowing, toggle} = useModal();
   const {firstName,lastName,role} = getUserData();
   useEffect(()=>{},[colorsFn])
   
   return (
-    <div className={styles.position}>
+    <div className={cn('position')}>
       {role==="admin"&&
           isShowing&&
           <div>
@@ -32,12 +35,12 @@ const SideBar = ({ userName }: SideBarProps) => {
                 children={<AdminModalTool onclick={toggle}/>}
             />
           </div>}
-      <div className={styles.sideBar}>
-        <div className={styles.settContainer}>
-          <div className={styles.userImg}>
+      <div className={cn('sideBar')}>
+        <div className={cn('settContainer')}>
+          <div className={cn('userImg')}>
             <PseudoAvatar firstname={firstName[0]} lastname={lastName[0]} color={colorsFn}/>
           </div>
-          <span className={styles.label}>{firstName + ' ' + lastName}</span>
+          <span className={cn('label')}>{firstName + ' ' + lastName}</span>
           <NavLink state={{ from: location }} to="/profile">
             <ActionButton
               type="settings"
@@ -47,8 +50,8 @@ const SideBar = ({ userName }: SideBarProps) => {
           </NavLink>
         </div>
         {role==="admin"&&
-            <div className={styles.tools}>
-          <div onClick={toggle}><BadgeRe component={'Tools'} variant={"dot"} badgeColor={"mint"}/></div>
+            <div className={cn('tools')}>
+              <div className={cn('tool-container')} onClick={toggle}><BadgeRe component={<FaToolbox/>} variant={"dot"} badgeColor={"mint"}/></div>
         </div>}
         <OwnBookingsContainer />
       </div>

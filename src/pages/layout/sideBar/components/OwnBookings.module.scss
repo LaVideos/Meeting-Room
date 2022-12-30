@@ -1,0 +1,49 @@
+.scroll {
+  margin-top: 10px;
+  margin-bottom: 30px;
+  //height: 430px  !important;
+}
+
+.scroll{
+  //padding: 10px 10px 20px;
+}
+
+
+.loader{
+  padding-bottom: 30px;
+}
+
+
+//My Room
+
+.myRoomsContainer {
+  margin-top: 20px;
+
+  padding-top: 20px;
+  height: 400px;
+  border-top: 1px solid var(--myRoomContainer-borderTop);
+}
+
+.labelMyRooms {
+  margin: 0;
+  margin-left: 20px;
+
+  color: var(--primary-text-color);
+  text-transform: uppercase;
+
+  cursor: default;
+}
+
+.roomsCardsContainer {
+  display: flex;
+  margin-top: 8px;
+  margin-bottom: 10px;
+  flex-direction: column;
+  gap: 25px;
+  padding: 0 15px 0 15px;
+}
+
+.loader{
+  display: flex;
+  justify-content: center;
+}

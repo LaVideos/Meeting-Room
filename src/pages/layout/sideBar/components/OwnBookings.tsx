@@ -1,31 +1,27 @@
-import { useState } from "react";
+import React, {useState} from "react";
 import ActionButton from "../../../../components/icon-button/IconButton";
-import styles from "../SideBar.module.scss";
+import styles from "./OwnBooking.module.scss";
 import stylesModal from "./modal.module.scss";
 import Modal from "../../../../components/modal/Modal";
 import Button from "../../../../components/button";
-import BookingForm from "components/booking-form";
-import React, { useEffect } from "react";
-import { getFromLocalStorage } from "services/local-storage.service";
-import { useAppDispatch, useAppSelector } from "hooks/toolkitHooks";
-// import { bookingActions } from "redux&saga/slices/booking.slice";
+import {useAppDispatch, useAppSelector} from "hooks/toolkitHooks";
 import dayjs from "dayjs";
-import {
-  addOneBooking,
-  addRecurringBooking,
-  editBooking,
-  getAllBookings,
-  resetState,
-  setBookingId,
-  editOwnBooking,
-  deleteBookingById,
-  setBookingError,
-  setSelectedDate,
-} from "redux&saga/slices/booking.slice";
+import {deleteBookingById, editOwnBooking, resetState, setBookingId,} from "redux&saga/slices/booking.slice";
 import ModalOwnRooms from "./ModalOwnBookings";
-import Loader from "pages/layout/loader/Loader";
-//@ts-ignore
-const OwnBookings = ({ booking, index }) => {
+import {BookingProps, ownBookingsActions} from "../../../../redux&saga/slices/ownBookings.slice";
+import classNames from "classnames/bind";
+import TimeStartAndEnd from "../../../../components/time-start-and-end/TimeStartAndEnd";
+
+const cn = classNames.bind(styles)
+
+
+interface OwnBookingsProps{
+    booking:BookingProps;
+    index:number
+}
+
+
+const OwnBookings = ({ booking, index }:OwnBookingsProps) => {
   const [openDelete, setOpenDelete] = useState(false);
   const [openEdit, setOpenEdit] = useState<boolean>(false);
   const dispatch = useAppDispatch();
@@ -37,7 +33,8 @@ const OwnBookings = ({ booking, index }) => {
   const floor = rooms.filter((el) => el.roomId == booking.room_FK);
 
   const handleEdit = () => {
-    const invitations = booking.invitations.map((id:any)=>id.invitedId_FK)
+    const invitations = booking.invitations.map((id:any)=>id.invitedId_FK);
+
     dispatch(
       editOwnBooking({
         title: booking.title,
@@ -69,16 +66,21 @@ const OwnBookings = ({ booking, index }) => {
           isRecurring: false,
         })
       );
+        dispatch(ownBookingsActions.reset())
     }
     setOpenDelete(false);
   };
   return (
     <>
-      <div className={styles.roomCardContainer} key={index}>
-        <div className={styles.headerRoomCard}>
-          <span className={styles.labelRoomName}>{booking.title}</span>
+      <div className={cn('roomCardContainer')} key={index}>
+        <div className={cn('headerRoomCard')}>
+            <div className={cn('text-container')}>
+                <div className={cn('labelRoomName')}>{booking.title}</div>
+                {booking.description !== "" && (
+                    <div className={cn('labelDescription')}>{booking.description}</div>
+                )}</div>
 
-          <span>
+          <div className={cn('button-box')}>
             <ActionButton
               size="small"
               type="edit"
@@ -96,33 +98,13 @@ const OwnBookings = ({ booking, index }) => {
                 handleDelete();
               }}
             />
-          </span>
+          </div>
         </div>
-        {booking.description !== "" && (
-          <span className={styles.labelDescription}>{booking.description}</span>
-        )}
-        <div className={styles.labelTime}>
-          <span className={styles.labelTimeHeading}>
-            <svg
-              className={styles.contSvg}
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-            >
-              <path d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm1 12v-6h-2v8h7v-2h-5z" />
-            </svg>
 
-            <span className={styles.time}>
-              {booking.startDateTime.slice(11, 16)}
-
-              {" | "}
-
-              {dayjs(booking.startDateTime).format("DD MMMM YYYY")}
-
-              {/* {booking.endDateTime.slice(11, 16)} */}
-            </span>
-          </span>
+        <div className={cn('labelTime')}>
+          <div className={cn('labelTimeHeading')}>
+              <TimeStartAndEnd start={booking.startDateTime} end={booking.endDateTime}/>
+          </div>
         </div>
       </div>
 
@@ -141,11 +123,11 @@ const OwnBookings = ({ booking, index }) => {
       {openDelete && (
         <Modal closeModal={handleCloseModal}>
           <form>
-            <h1 className={stylesModal.modalh1}>Delete?</h1>
-            <p className={stylesModal.modalp}>
+            <h1 className={cn('modalh1')}>Delete?</h1>
+            <p className={cn('modalp')}>
               Are you sure you want to delete this booking?
             </p>
-            <div className={stylesModal.modalDeleteButtons}>
+            <div className={cn('modalDeleteButtons')}>
               <Button
                 type="submit"
                 styleType="error"
@@ -164,3 +146,4 @@ const OwnBookings = ({ booking, index }) => {
   );
 };
 export default OwnBookings;
+

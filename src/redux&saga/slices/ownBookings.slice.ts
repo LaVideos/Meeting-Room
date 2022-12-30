@@ -1,5 +1,6 @@
-import { createSlice } from "@reduxjs/toolkit";
-interface booking {
+import {createSlice, PayloadAction} from "@reduxjs/toolkit";
+
+export interface BookingProps {
   bookingId: number;
   title: string;
   description: string;
@@ -11,17 +12,28 @@ interface booking {
   invitations:Array<number>;
 }
 export interface InitialStateBooking {
-  bookings: Array<booking> | [];
+  bookings: Array<BookingProps>
   totalCount: number;
   limit: number;
   page:number;
+  loading: boolean;
+}
+
+export interface GetOwnBookingsPayload {
+  page: number;
+}
+
+export interface GetOwnBookingsSuccessPayload {
+  bookings: BookingProps[];
+  totalCount: number;
 }
 
 const initialState: InitialStateBooking = {
   bookings: [],
   totalCount: 0,
   limit:0,
-  page:1,
+  page:2,
+  loading: false
 
 };
 
@@ -29,13 +41,6 @@ const ownBookingsSlice = createSlice({
   name: "ownBookings",
   initialState,
   reducers: {
-    getOwnBookings(state, { payload }) {},
-    setOwnBookings(state, { payload }) {
-      state.bookings = state.bookings.concat(payload);
-    },
-    setPage(state, action) {
-      state.page = action.payload;
-    },
     getTotal(state, { payload }) {},
     setTotal(state, { payload }) {
       state.totalCount = payload.totalCount;
@@ -45,7 +50,23 @@ const ownBookingsSlice = createSlice({
       state.totalCount = 0;
       state.bookings = [];
       state.limit = 0;
-      state.page = 1;
+      state.page = 2;
+    },
+
+    loading(state,action){
+      state.loading = action.payload
+    },
+
+    getOwnBookings(state, action: PayloadAction<GetOwnBookingsPayload>) {
+      // state.loading = false
+    },
+    getOwnBookingsSuccess(state, action: PayloadAction<GetOwnBookingsSuccessPayload>) {
+      state.bookings = [...state.bookings, ...action.payload.bookings]
+      state.totalCount = action.payload.totalCount
+      state.loading = false
+    },
+    setPage(state, action: PayloadAction<number>) {
+      state.page = action.payload
     },
   },
 });
