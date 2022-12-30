@@ -67,52 +67,52 @@ If you don`t want to visit the deployed site - you can view several screenshots 
 ```
 Login page
 ```
-![Screenshot](C:\Users\lavid\Desktop\Meeting-Room3\src\assets\screenshot\login.png)
+![Screenshot](.\src\assets\screenshot\login.png)
 
 ```
 Register page
 ```
-![Screenshot](C:\Users\lavid\Desktop\Meeting-Room3\src\assets\screenshot\register.png)
+![Screenshot](.\src\assets\screenshot\register.png)
 
 ```
 Forgot Password page
 ```
-![Screenshot](C:\Users\lavid\Desktop\Meeting-Room3\src\assets\screenshot\forgotPassword.png)
+![Screenshot](.\src\assets\screenshot\forgotPassword.png)
 ```
 Success Change
 ```
-![Screenshot](C:\Users\lavid\Desktop\Meeting-Room3\src\assets\screenshot\forgotPasswordSuccess.png)
+![Screenshot](.\src\assets\screenshot\forgotPasswordSuccess.png)
 ```
 Rooms Page
 ```
-![Screenshot](C:\Users\lavid\Desktop\Meeting-Room3\src\assets\screenshot\rooms.png)
+![Screenshot](.\src\assets\screenshot\rooms.png)
 
 ```
 Calendar Page
 ```
-![Screenshot](C:\Users\lavid\Desktop\Meeting-Room3\src\assets\screenshot\calendar.png)
+![Screenshot](.\src\assets\screenshot\calendar.png)
 
 ```
 Invite Page
 ```
-![Screenshot](C:\Users\lavid\Desktop\Meeting-Room3\src\assets\screenshot\invite.png)
-![Screenshot](C:\Users\lavid\Desktop\Meeting-Room3\src\assets\screenshot\tools.png)
+![Screenshot](.\src\assets\screenshot\invite.png)
+![Screenshot](.\src\assets\screenshot\tools.png)
 
 ```
 Not Found Page
 ```
-![Screenshot](C:\Users\lavid\Desktop\Meeting-Room3\src\assets\screenshot\notFound.png)
+![Screenshot](.\src\assets\screenshot\notFound.png)
 
 ```
 Settings Page
 ```
-![Screenshot](C:\Users\lavid\Desktop\Meeting-Room3\src\assets\screenshot\profile.png)
-![Screenshot](C:\Users\lavid\Desktop\Meeting-Room3\src\assets\screenshot\change.png)
+![Screenshot](.\src\assets\screenshot\profile.png)
+![Screenshot](.\src\assets\screenshot\change.png)
 
 ```
 Black theme example
 ```
-![Screenshot](C:\Users\lavid\Desktop\Meeting-Room3\src\assets\screenshot\black.png)
+![Screenshot](.\src\assets\screenshot\black.png)
 
 ## 🤙🏼 Contact
 
