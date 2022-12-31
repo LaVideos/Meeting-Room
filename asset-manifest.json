@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/Meeting-Room/static/css/main.ebf8e71e.css",
-    "main.js": "/Meeting-Room/static/js/main.ed6b4d26.js",
+    "main.css": "/Meeting-Room/static/css/main.6da9e707.css",
+    "main.js": "/Meeting-Room/static/js/main.926ec99d.js",
     "static/media/User.png": "/Meeting-Room/static/media/User.a44eb35e77b7f0224870.png",
     "static/media/settings.svg": "/Meeting-Room/static/media/settings.8df14fe5cbd1481203254a07c4134844.svg",
     "static/media/garbage.svg": "/Meeting-Room/static/media/garbage.163033ee6cfbc60c27a09bc79c92c0aa.svg",
     "static/media/edit.svg": "/Meeting-Room/static/media/edit.391b51e3a72477a3e0e4b59a0280a566.svg",
     "index.html": "/Meeting-Room/index.html",
     "static/media/close.svg": "/Meeting-Room/static/media/close.052823117faac34881ccb7419b85b71d.svg",
-    "main.ebf8e71e.css.map": "/Meeting-Room/static/css/main.ebf8e71e.css.map",
-    "main.ed6b4d26.js.map": "/Meeting-Room/static/js/main.ed6b4d26.js.map"
+    "main.6da9e707.css.map": "/Meeting-Room/static/css/main.6da9e707.css.map",
+    "main.926ec99d.js.map": "/Meeting-Room/static/js/main.926ec99d.js.map"
   },
   "entrypoints": [
-    "static/css/main.ebf8e71e.css",
-    "static/js/main.ed6b4d26.js"
+    "static/css/main.6da9e707.css",
+    "static/js/main.926ec99d.js"
   ]
 }
