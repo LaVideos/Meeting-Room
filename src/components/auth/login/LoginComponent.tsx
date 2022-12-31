@@ -79,6 +79,7 @@ const LoginComponent = () => {
         </div>
       </form>
       <div className={cn("link")}>
+        <NavLink to={'/auth/signup/email=youcantregisterwithoutinvitation@incorainc.com'}><span title={'it\'s just an opportunity to go to the registration page. According to the idea, this possibility cannot be, since to get to this page, you need to receive an invitation to the mail with the corresponding domain'}>Sign up</span></NavLink>
         <NavLink to={"/auth/forgotPassword"}>
           <span>Forgot password?</span>
         </NavLink>

@@ -41,9 +41,16 @@ const RegisterComponent = () => {
             navigate('/auth/login')
         }
 
-        if(!regex.incoraEmail.test(params.email?params.email:'none')&&!success){
-            navigate('/auth/login');
-            ResponsePopup.ErrorPopup('404\nWrong registration link').then()
+        // if(!regex.incoraEmail.test(params.email?params.email:'none')&&!success){
+        //     navigate('/auth/login');
+        //     dispatch(authActions.success(false))
+        //     ResponsePopup.ErrorPopup('404\nWrong registration link').then()
+        // }
+
+        if(!params.email?.includes('@incorainc.com')){
+                navigate('/auth/login');
+                dispatch(authActions.success(false))
+                ResponsePopup.ErrorPopup('404\nWrong registration link').then()
         }
 
     }, [success,params.email]);
